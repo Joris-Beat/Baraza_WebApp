@@ -1,0 +1,26 @@
+# Configuration Netlify — https://docs.netlify.com/configure-builds/file-based-configuration/
+[build]
+  # Dossier publié : uniquement le site (pas les dossiers python/ et docs/)
+  publish = "site"
+
+# En-têtes de sécurité
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options = "DENY"
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+
+# Mise en cache longue des fichiers statiques
+[[headers]]
+  for = "/css/*"
+  [headers.values]
+    Cache-Control = "public, max-age=604800"
+[[headers]]
+  for = "/js/*"
+  [headers.values]
+    Cache-Control = "public, max-age=604800"
+[[headers]]
+  for = "/images/*"
+  [headers.values]
+    Cache-Control = "public, max-age=2592000"

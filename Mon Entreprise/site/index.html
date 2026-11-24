@@ -1,0 +1,694 @@
+<!DOCTYPE html>
+<html lang="fr" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script>
+        /* Thème et langue appliqués avant l'affichage (évite un flash) */
+        (function () {
+            var d = document.documentElement, theme, lang;
+            try { theme = localStorage.getItem('theme'); lang = localStorage.getItem('lang'); } catch (e) {}
+            if (!theme) theme = window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark';
+            d.setAttribute('data-theme', theme);
+            if (!lang) lang = (navigator.language || 'fr').slice(0, 2) === 'fr' ? 'fr' : 'en';
+            d.setAttribute('lang', lang);
+            d.classList.add('js');
+        })();
+    </script>
+    <meta name="theme-color" content="#070d1a">
+    <title data-i18n="meta.title">Baraza All Services — Création de sites web, applications et logiciels</title>
+    <meta name="description" data-i18n-attr="content:meta.description" content="Sites vitrines, boutiques en ligne, applications et logiciels sur mesure. Abonnement dès 29 $/mois ou projet à prix fixe. Paiement dans votre devise. Devis gratuit sous 24 h.">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Baraza All Services">
+    <meta property="og:title" data-i18n-attr="content:meta.og_title" content="Sites web professionnels dès 29 $/mois — Baraza All Services">
+    <meta property="og:description" data-i18n-attr="content:meta.description" content="Sites vitrines, boutiques en ligne, applications et logiciels sur mesure. Abonnement dès 29 $/mois ou projet à prix fixe. Paiement dans votre devise. Devis gratuit sous 24 h.">
+    <meta property="og:url" content="https://baraza-all-services.netlify.app/">
+    <meta property="og:image" content="https://baraza-all-services.netlify.app/images/og-image.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <link rel="canonical" href="https://baraza-all-services.netlify.app/">
+    <link rel="icon" type="image/svg+xml" href="images/favicon.svg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  "name": "Baraza All Services",
+  "description": "Développement Web & Logiciel",
+  "url": "https://baraza-all-services.netlify.app/",
+  "email": "contact@example.com",
+  "telephone": "+27 00 000 0000",
+  "currenciesAccepted": "USD, ZAR, EUR, GBP, CDF, XAF, XOF, KES, TZS, UGX, RWF, BIF, NGN, ZMW, BWP, AOA, CAD, CHF",
+  "paymentAccepted": "Credit Card, PayShap, EFT, Cash, Bank Transfer, Mobile Money",
+  "makesOffer": [
+    {
+      "@type": "Offer",
+      "name": "Website Starter",
+      "priceSpecification": {
+        "@type": "UnitPriceSpecification",
+        "price": 29,
+        "priceCurrency": "USD",
+        "unitText": "MONTH"
+      }
+    },
+    {
+      "@type": "Offer",
+      "name": "Website Business",
+      "priceSpecification": {
+        "@type": "UnitPriceSpecification",
+        "price": 49,
+        "priceCurrency": "USD",
+        "unitText": "MONTH"
+      }
+    },
+    {
+      "@type": "Offer",
+      "name": "Website Business Pro",
+      "priceSpecification": {
+        "@type": "UnitPriceSpecification",
+        "price": 89,
+        "priceCurrency": "USD",
+        "unitText": "MONTH"
+      }
+    },
+    {
+      "@type": "Offer",
+      "name": "Website eCommerce",
+      "priceSpecification": {
+        "@type": "UnitPriceSpecification",
+        "price": 129,
+        "priceCurrency": "USD",
+        "unitText": "MONTH"
+      }
+    }
+  ]
+}
+    </script>
+</head>
+<body data-whatsapp="27000000000">
+<a class="skip-link" href="#contenu" data-i18n="ui.skip">Aller au contenu</a>
+
+<header class="site-header">
+    <div class="container site-header__inner">
+        <a class="logo" href="#contenu" aria-label="Baraza All Services">
+            <span class="logo__mark">BA</span>
+                <span class="logo__text"><strong>Baraza All Services</strong><small data-i18n="brand.tagline">Développement Web &amp; Logiciel</small></span>
+        </a>
+        <nav class="main-nav" id="main-nav">
+            <a href="#services"><span data-i18n="nav.services">Services</span></a>
+            <a href="#tarifs"><span data-i18n="nav.pricing">Tarifs</span></a>
+            <a href="#applications"><span data-i18n="nav.apps">Applications</span></a>
+            <a href="#paiement"><span data-i18n="nav.payment">Paiement</span></a>
+            <a href="#faq"><span data-i18n="nav.faq">FAQ</span></a>
+            <a class="btn btn--primary btn--sm" href="#devis"><span data-i18n="nav.cta">Devis gratuit</span></a>
+        </nav>
+        <div class="header-tools">
+            <button class="icon-btn lang-btn" type="button" id="lang-toggle" data-i18n-attr="aria-label:ui.lang_switch;title:ui.lang_switch" aria-label="Switch to English" title="Switch to English"><span data-i18n="ui.lang_label">EN</span></button>
+            <button class="icon-btn theme-btn" type="button" id="theme-toggle" aria-label="Passer en mode clair">
+                <span class="theme-btn__sun"><svg class="icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg></span><span class="theme-btn__moon"><svg class="icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M21 12.8A9 9 0 1111.2 3a7 7 0 009.8 9.8z"/></svg></span>
+            </button>
+            <button class="icon-btn nav-toggle" type="button" aria-controls="main-nav" aria-expanded="false" data-i18n-attr="aria-label:ui.menu_open" aria-label="Ouvrir le menu">
+                <span class="nav-toggle__open"><svg class="icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M4 7h16M4 12h16M4 17h16"/></svg></span>
+                <span class="nav-toggle__close"><svg class="icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M6 6l12 12M18 6L6 18"/></svg></span>
+            </button>
+        </div>
+    </div>
+</header>
+
+<main id="contenu">
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+        <div class="container">
+            <ol>
+                <li><a href="#contenu"><span data-i18n="breadcrumb.home">Accueil</span></a></li>
+                <li><a href="#services"><span data-i18n="breadcrumb.services">Services</span></a></li>
+                <li aria-current="page"><span data-i18n="breadcrumb.current">Développement Web &amp; Logiciel</span></li>
+            </ol>
+        </div>
+    </nav>
+
+    <section class="hero">
+        <div class="container hero__grid">
+            <div class="hero__content reveal">
+                <p class="eyebrow" data-i18n="hero.eyebrow">Développement web &amp; logiciel</p>
+                <h1 data-i18n-html="hero.title">Des sites web professionnels pour les <span class="accent">entreprises qui grandissent</span></h1>
+                <p class="lead" data-i18n="hero.lead">Lancez un site professionnel, ouvrez votre boutique en ligne ou simplifiez votre activité avec un logiciel sur mesure. Abonnement mensuel tout compris ou projet à prix fixe, payable dans votre devise, depuis n&#x27;importe quel pays.</p>
+                <div class="hero__actions">
+                    <a class="btn btn--primary btn--lg" href="#tarifs"><span data-i18n="hero.cta_primary">Voir les formules</span> <svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+                    <a class="btn btn--ghost btn--lg" href="#devis"><span data-i18n="hero.cta_secondary">Demander un devis gratuit</span></a>
+                </div>
+                <ul class="hero__proof">
+                    <li><strong><span data-i18n="ui.from">dès</span> <span class="money" data-usd="29">29 $</span></strong><span data-i18n="hero.proof1">par mois, tout compris</span></li>
+                    <li><strong><span data-i18n="hero.proof2_value">24 h</span></strong><span data-i18n="hero.proof2">pour recevoir votre devis</span></li>
+                    <li><strong><span data-i18n="hero.proof3_value">+15</span></strong><span data-i18n="hero.proof3">devises acceptées</span></li>
+                </ul>
+            </div>
+            <div class="hero__visual reveal" aria-hidden="true">
+                <div class="orbit">
+                    <span class="orbit__ring orbit__ring--outer"></span>
+                    <span class="orbit__ring orbit__ring--inner"></span>
+                    <span class="orbit__node orbit__node--top"><svg class="icon" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 9h18M7 13h6M7 16h4"/></svg></span>
+                    <span class="orbit__node orbit__node--right"><svg class="icon" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 8h14l-1 12H6L5 8z"/><path d="M9 8V6a3 3 0 016 0v2M10 12h4"/></svg></span>
+                    <span class="orbit__node orbit__node--bottom"><svg class="icon" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="2.5" y="5" width="19" height="14" rx="2"/><path d="M2.5 10h19M6 15h4"/></svg></span>
+                    <span class="orbit__node orbit__node--left"><svg class="icon" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 010 18M12 3a14 14 0 000 18"/></svg></span>
+                    <span class="orbit__core"><svg class="icon" width="56" height="56" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 8h18M9 12l-2 2 2 2M15 12l2 2-2 2M13 11l-2 6"/></svg></span>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <ul class="feature-strip"><li><svg class="icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="3" y="4" width="18" height="12" rx="2"/><path d="M8 20h8M12 16v4"/></svg><span data-i18n="strip.0">Design &amp; développement web</span></li><li><svg class="icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 3l9 5-9 5-9-5 9-5z"/><path d="M3 13l9 5 9-5"/></svg><span data-i18n="strip.1">Hébergement sécurisé</span></li><li><svg class="icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 9h18M7 13h6M7 16h4"/></svg><span data-i18n="strip.2">Nom de domaine</span></li><li><svg class="icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg><span data-i18n="strip.3">Support continu</span></li></ul>
+        </div>
+    </section>
+
+    <section class="section section--alt" aria-labelledby="defis-titre">
+        <div class="container">
+            <header class="section-head section-head--center reveal">
+                <p class="eyebrow" data-i18n="challenges.eyebrow">Défis numériques</p>
+                <h2 data-i18n-html="challenges.title" id="defis-titre">Des outils dépassés freinent la <span class="accent">croissance de votre entreprise</span></h2>
+                <p data-i18n="challenges.lead">Beaucoup d&#x27;entreprises perdent des clients à cause d&#x27;un site lent, d&#x27;outils qui ne communiquent pas, de tâches manuelles et d&#x27;une présence en ligne trop faible.</p>
+            </header>
+            <div class="card-grid">
+                <article class="card reveal">
+                    <span class="card__icon"><svg class="icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 9h18M7 13h6M7 16h4"/></svg></span>
+                    <h3 data-i18n="challenges.items.0.title">Site web dépassé</h3>
+                    <p data-i18n="challenges.items.0.text">Un site ancien, lent ou mal structuré fait perdre la confiance des visiteurs, réduit les demandes de contact et affaiblit votre image.</p>
+                </article>
+                <article class="card reveal">
+                    <span class="card__icon"><svg class="icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M3 12h4l3-8 4 16 3-8h4"/></svg></span>
+                    <h3 data-i18n="challenges.items.1.title">Processus manuels</h3>
+                    <p data-i18n="challenges.items.1.text">Les tâches répétitives font perdre du temps, multiplient les erreurs et freinent la croissance de votre activité.</p>
+                </article>
+                <article class="card reveal">
+                    <span class="card__icon"><svg class="icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="3" y="4" width="18" height="12" rx="2"/><path d="M8 20h8M12 16v4"/></svg></span>
+                    <h3 data-i18n="challenges.items.2.title">Outils déconnectés</h3>
+                    <p data-i18n="challenges.items.2.text">Quand vos outils ne communiquent pas, vos équipes ressaisissent les données, jonglent avec des tableurs et perdent l&#x27;information.</p>
+                </article>
+                <article class="card reveal">
+                    <span class="card__icon"><svg class="icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="7" y="2" width="10" height="20" rx="2"/><path d="M11 18h2"/></svg></span>
+                    <h3 data-i18n="challenges.items.3.title">Mauvaise expérience mobile</h3>
+                    <p data-i18n="challenges.items.3.text">Vos clients attendent une expérience rapide et fluide sur ordinateur, tablette et smartphone. Sans cela, ils partent chez un concurrent.</p>
+                </article>
+                <article class="card reveal">
+                    <span class="card__icon"><svg class="icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 3l8 3v6c0 5-3.5 8.5-8 9-4.5-.5-8-4-8-9V6l8-3z"/><path d="M8.5 12l2.5 2.5 4.5-5"/></svg></span>
+                    <h3 data-i18n="challenges.items.4.title">Failles de sécurité</h3>
+                    <p data-i18n="challenges.items.4.text">Extensions obsolètes, absence de sauvegardes et mauvaises pratiques exposent votre activité à des risques réels.</p>
+                </article>
+                <article class="card reveal">
+                    <span class="card__icon"><svg class="icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M4 20h16M7 16V9M12 16V5M17 16v-4"/><path d="M10 7l2-2 2 2"/></svg></span>
+                    <h3 data-i18n="challenges.items.5.title">Croissance limitée</h3>
+                    <p data-i18n="challenges.items.5.text">Une plateforme doit pouvoir accueillir plus d&#x27;utilisateurs, de services, d&#x27;intégrations et de contenus au fil de votre développement.</p>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <section class="section" id="services" aria-labelledby="services-titre">
+        <div class="container">
+            <header class="section-head section-head--center reveal">
+                <p class="eyebrow" data-i18n="services.eyebrow">Services de développement</p>
+                <h2 data-i18n-html="services.title" id="services-titre">Des solutions web &amp; logicielles construites <span class="accent">autour de votre activité</span></h2>
+                <p data-i18n="services.lead">Nous créons des plateformes qui vous aident à attirer des clients, automatiser vos tâches, gérer vos informations, vendre en ligne et travailler plus efficacement.</p>
+            </header>
+            <div class="card-grid">
+                <article class="card reveal">
+                    <span class="card__icon"><svg class="icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 9h18M7 13h6M7 16h4"/></svg></span>
+                    <h3 data-i18n="services.items.0.title">Sites vitrines professionnels</h3>
+                    <p data-i18n="services.items.0.text">Des sites conçus pour inspirer confiance, présenter clairement votre valeur et transformer les visiteurs en demandes de devis.</p>
+                </article>
+                <article class="card reveal">
+                    <span class="card__icon"><svg class="icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 8h14l-1 12H6L5 8z"/><path d="M9 8V6a3 3 0 016 0v2M10 12h4"/></svg></span>
+                    <h3 data-i18n="services.items.1.title">Boutiques en ligne</h3>
+                    <p data-i18n="services.items.1.text">Catalogue produits, panier, paiement en ligne, gestion des commandes et parcours d&#x27;achat pensé pour vendre.</p>
+                </article>
+                <article class="card reveal">
+                    <span class="card__icon"><svg class="icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 8h18M9 12l-2 2 2 2M15 12l2 2-2 2M13 11l-2 6"/></svg></span>
+                    <h3 data-i18n="services.items.2.title">Logiciels sur mesure</h3>
+                    <p data-i18n="services.items.2.text">Des outils adaptés à vos processus internes : gestion, reporting, rôles utilisateurs et automatisations.</p>
+                </article>
+                <article class="card reveal">
+                    <span class="card__icon"><svg class="icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="4" y="4" width="16" height="12" rx="1"/><path d="M8 8h5M8 11h8M3 20h18"/></svg></span>
+                    <h3 data-i18n="services.items.3.title">Portails &amp; espaces clients</h3>
+                    <p data-i18n="services.items.3.text">Espaces clients, intranets, tableaux de bord, formulaires de demande et accès sécurisé aux documents.</p>
+                </article>
+                <article class="card reveal">
+                    <span class="card__icon"><svg class="icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="3" y="3" width="8" height="8" rx="1"/><rect x="13" y="13" width="8" height="8" rx="1"/><path d="M11 7h4a2 2 0 012 2v4M13 17H9a2 2 0 01-2-2v-4"/></svg></span>
+                    <h3 data-i18n="services.items.4.title">Intégrations &amp; API</h3>
+                    <p data-i18n="services.items.4.text">Connexion de votre site avec vos outils : paiement, CRM, emailing, bases de données et services tiers.</p>
+                </article>
+                <article class="card reveal">
+                    <span class="card__icon"><svg class="icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="7" y="2" width="10" height="20" rx="2"/><path d="M11 18h2"/></svg></span>
+                    <h3 data-i18n="services.items.5.title">Design UX / UI responsive</h3>
+                    <p data-i18n="services.items.5.text">Des interfaces claires et agréables, pensées d&#x27;abord pour le mobile puis adaptées à tous les écrans.</p>
+                </article>
+                <article class="card reveal">
+                    <span class="card__icon"><svg class="icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="3" y="3" width="7" height="7" rx="2"/><rect x="14" y="3" width="7" height="7" rx="2"/><rect x="3" y="14" width="7" height="7" rx="2"/><path d="M17.5 14v7M14 17.5h7"/></svg></span>
+                    <h3 data-i18n="services.items.6.title">Applications web &amp; mobiles</h3>
+                    <p data-i18n="services.items.6.text">Des applications qui résolvent un besoin précis de votre activité et améliorent votre efficacité.</p>
+                </article>
+                <article class="card reveal">
+                    <span class="card__icon"><svg class="icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 3l8 3v6c0 5-3.5 8.5-8 9-4.5-.5-8-4-8-9V6l8-3z"/><path d="M8.5 12l2.5 2.5 4.5-5"/></svg></span>
+                    <h3 data-i18n="services.items.7.title">Sécurité &amp; maintenance</h3>
+                    <p data-i18n="services.items.7.text">Mises à jour, sauvegardes, surveillance, certificat SSL, corrections et améliorations continues.</p>
+                </article>
+                <article class="card reveal">
+                    <span class="card__icon"><svg class="icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M3 12h4l3-8 4 16 3-8h4"/></svg></span>
+                    <h3 data-i18n="services.items.8.title">Performance &amp; SEO</h3>
+                    <p data-i18n="services.items.8.text">Vitesse de chargement, référencement naturel, structure et fiabilité pour être trouvé sur Google.</p>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <section class="section section--alt" id="tarifs" aria-labelledby="tarifs-titre">
+        <div class="container">
+            <header class="section-head reveal">
+                <p class="eyebrow" data-i18n="pricing.eyebrow">Formules de création de site</p>
+                <h2 data-i18n-html="pricing.title" id="tarifs-titre">Construisez votre présence. <span class="accent">Développez-vous en ligne.</span></h2>
+                <p data-i18n="pricing.lead">Choisissez la souplesse d&#x27;un abonnement mensuel tout compris ou investissez dans un projet à prix fixe. Des tarifs clairs, un travail professionnel et un vrai suivi.</p>
+            </header>
+            <div class="pricing-toolbar">
+                <div class="tabs" role="tablist" data-i18n-attr="aria-label:pricing.aria_tabs" aria-label="Type de formule">
+                    <button class="tabs__btn is-active" type="button" role="tab" id="tab-mensuel" aria-controls="panel-mensuel" aria-selected="true"><span data-i18n="pricing.tab_monthly">Abonnement mensuel</span></button>
+                    <button class="tabs__btn" type="button" role="tab" id="tab-unique" aria-controls="panel-unique" aria-selected="false" tabindex="-1"><span data-i18n="pricing.tab_oneoff">Paiement unique</span></button>
+                </div>
+                <div class="currency">
+                    <label for="devise-tarifs"><svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 010 18M12 3a14 14 0 000 18"/></svg><span data-i18n="ui.currency">Devise</span></label>
+                    <select id="devise-tarifs" class="currency__select" data-currency-select><option value="USD">USD — Dollar américain</option><option value="ZAR">ZAR — Rand sud-africain</option><option value="EUR">EUR — Euro</option><option value="GBP">GBP — Livre sterling</option><option value="CDF">CDF — Franc congolais</option><option value="XAF">XAF — Franc CFA (CEMAC)</option><option value="XOF">XOF — Franc CFA (UEMOA)</option><option value="KES">KES — Shilling kényan</option><option value="TZS">TZS — Shilling tanzanien</option><option value="UGX">UGX — Shilling ougandais</option><option value="RWF">RWF — Franc rwandais</option><option value="BIF">BIF — Franc burundais</option><option value="NGN">NGN — Naira nigérian</option><option value="ZMW">ZMW — Kwacha zambien</option><option value="BWP">BWP — Pula botswanais</option><option value="AOA">AOA — Kwanza angolais</option><option value="CAD">CAD — Dollar canadien</option><option value="CHF">CHF — Franc suisse</option></select>
+                </div>
+            </div>
+            <p class="currency-note" data-i18n="ui.currency_note">Prix de référence en dollars US. Les montants dans une autre devise sont indicatifs (taux du jour).</p>
+            <div class="tabs__panel" id="panel-mensuel" role="tabpanel" aria-labelledby="tab-mensuel">
+                <p class="panel-intro"><svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span data-i18n="pricing.intro_monthly">Hébergement, SSL, maintenance et modifications inclus — un moyen économique d&#x27;avoir un site pro avec un suivi continu.</span></p>
+                <div class="pricing-grid">
+                        <article class="price-card">
+                            
+                            <p class="price-card__kicker" data-i18n="pricing.kicker">Abonnement mensuel</p>
+                            <h3 data-i18n="pricing.plans.starter.name">Starter</h3>
+                            <p class="price-card__tagline" data-i18n="pricing.plans.starter.tagline">Pour démarrer votre présence en ligne.</p>
+                            <p class="price"><span class="price__amount"><span class="money" data-usd="29">29 $</span></span><span class="price__unit" data-i18n="ui.per_month">/mois</span></p>
+                            <p class="price-card__setup">+ <span class="money" data-usd="149">149 $</span> <span data-i18n="pricing.setup">de mise en place (une fois)</span></p>
+                            <ul class="checklist"><li><svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span data-i18n="pricing.plans.starter.features.0">Jusqu&#x27;à 3 pages responsive</span></li><li><svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span data-i18n="pricing.plans.starter.features.1">Hébergement &amp; certificat SSL</span></li><li><svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span data-i18n="pricing.plans.starter.features.2">Formulaire de contact &amp; WhatsApp</span></li><li><svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span data-i18n="pricing.plans.starter.features.3">SEO de base</span></li><li><svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span data-i18n="pricing.plans.starter.features.4">1 modification de contenu / mois</span></li></ul>
+                            <a class="btn btn--outline btn--block" href="?offre=starter#devis" data-offer="starter"><span><span data-i18n="pricing.choose">Choisir</span> <span data-i18n="pricing.plans.starter.name">Starter</span></span></a>
+                        </article>
+                        <article class="price-card price-card--popular">
+                            <span class="badge"><svg class="icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 3l2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 17l-5.4 2.9 1-6.1-4.4-4.3 6.1-.9L12 3z"/></svg><span data-i18n="pricing.popular">Le plus populaire</span></span>
+                            <p class="price-card__kicker" data-i18n="pricing.kicker">Abonnement mensuel</p>
+                            <h3 data-i18n="pricing.plans.business.name">Business</h3>
+                            <p class="price-card__tagline" data-i18n="pricing.plans.business.tagline">Le meilleur équilibre pour les PME.</p>
+                            <p class="price"><span class="price__amount"><span class="money" data-usd="49">49 $</span></span><span class="price__unit" data-i18n="ui.per_month">/mois</span></p>
+                            <p class="price-card__setup">+ <span class="money" data-usd="249">249 $</span> <span data-i18n="pricing.setup">de mise en place (une fois)</span></p>
+                            <ul class="checklist"><li><svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span data-i18n="pricing.plans.business.features.0">Jusqu&#x27;à 8 pages</span></li><li><svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span data-i18n="pricing.plans.business.features.1">Hébergement &amp; certificat SSL</span></li><li><svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span data-i18n="pricing.plans.business.features.2">Formulaires &amp; statistiques de visite</span></li><li><svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span data-i18n="pricing.plans.business.features.3">SEO de base optimisé</span></li><li><svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span data-i18n="pricing.plans.business.features.4">2 modifications de contenu / mois</span></li></ul>
+                            <a class="btn btn--primary btn--block" href="?offre=business#devis" data-offer="business"><span><span data-i18n="pricing.choose">Choisir</span> <span data-i18n="pricing.plans.business.name">Business</span></span></a>
+                        </article>
+                        <article class="price-card">
+                            
+                            <p class="price-card__kicker" data-i18n="pricing.kicker">Abonnement mensuel</p>
+                            <h3 data-i18n="pricing.plans.business-pro.name">Business Pro</h3>
+                            <p class="price-card__tagline" data-i18n="pricing.plans.business-pro.tagline">Pour les entreprises qui veulent plus de clients.</p>
+                            <p class="price"><span class="price__amount"><span class="money" data-usd="89">89 $</span></span><span class="price__unit" data-i18n="ui.per_month">/mois</span></p>
+                            <p class="price-card__setup">+ <span class="money" data-usd="390">390 $</span> <span data-i18n="pricing.setup">de mise en place (une fois)</span></p>
+                            <ul class="checklist"><li><svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span data-i18n="pricing.plans.business-pro.features.0">Jusqu&#x27;à 15 pages</span></li><li><svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span data-i18n="pricing.plans.business-pro.features.1">Formulaires avancés</span></li><li><svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span data-i18n="pricing.plans.business-pro.features.2">SEO avancé</span></li><li><svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span data-i18n="pricing.plans.business-pro.features.3">Rapport mensuel de performance</span></li><li><svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span data-i18n="pricing.plans.business-pro.features.4">4 modifications de contenu / mois</span></li></ul>
+                            <a class="btn btn--outline btn--block" href="?offre=business-pro#devis" data-offer="business-pro"><span><span data-i18n="pricing.choose">Choisir</span> <span data-i18n="pricing.plans.business-pro.name">Business Pro</span></span></a>
+                        </article>
+                        <article class="price-card">
+                            
+                            <p class="price-card__kicker" data-i18n="pricing.kicker">Abonnement mensuel</p>
+                            <h3 data-i18n="pricing.plans.ecommerce.name">E-commerce</h3>
+                            <p class="price-card__tagline" data-i18n="pricing.plans.ecommerce.tagline">Vendez en ligne, 24 h / 24.</p>
+                            <p class="price"><span class="price__amount"><span class="money" data-usd="129">129 $</span></span><span class="price__unit" data-i18n="ui.per_month">/mois</span></p>
+                            <p class="price-card__setup">+ <span class="money" data-usd="590">590 $</span> <span data-i18n="pricing.setup">de mise en place (une fois)</span></p>
+                            <ul class="checklist"><li><svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span data-i18n="pricing.plans.ecommerce.features.0">Boutique en ligne (jusqu&#x27;à 30 produits)</span></li><li><svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span data-i18n="pricing.plans.ecommerce.features.1">Paiement en ligne configuré</span></li><li><svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span data-i18n="pricing.plans.ecommerce.features.2">Configuration des livraisons</span></li><li><svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span data-i18n="pricing.plans.ecommerce.features.3">Hébergement géré &amp; sauvegardes</span></li><li><svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span data-i18n="pricing.plans.ecommerce.features.4">4 modifications de contenu / mois</span></li></ul>
+                            <a class="btn btn--outline btn--block" href="?offre=ecommerce#devis" data-offer="ecommerce"><span><span data-i18n="pricing.choose">Choisir</span> <span data-i18n="pricing.plans.ecommerce.name">E-commerce</span></span></a>
+                        </article>
+                </div>
+            </div>
+            <div class="tabs__panel" id="panel-unique" role="tabpanel" aria-labelledby="tab-unique" hidden>
+                <p class="panel-intro"><svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span data-i18n="pricing.intro_oneoff">Vous préférez un projet ponctuel ? Nous le construisons pour vous, le site vous appartient.</span></p>
+                <ul class="oneoff-list">
+                        <li class="oneoff">
+                            <span class="oneoff__icon"><svg class="icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M21 3L3 10.5l7 3 3 7L21 3z"/><path d="M10 13.5L21 3"/></svg></span>
+                            <span class="oneoff__body"><strong data-i18n="pricing.packages.landing-page.name">Landing page</strong><small data-i18n="pricing.packages.landing-page.detail">1 page, idéale pour une campagne publicitaire</small></span>
+                            <span class="oneoff__price"><span class="money" data-usd="390">390 $</span></span>
+                            <a class="btn btn--outline btn--sm" href="?offre=landing-page#devis" data-offer="landing-page"><span data-i18n="pricing.order">Commander</span></a>
+                        </li>
+                        <li class="oneoff">
+                            <span class="oneoff__icon"><svg class="icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 3l9 5-9 5-9-5 9-5z"/><path d="M3 13l9 5 9-5"/></svg></span>
+                            <span class="oneoff__body"><strong data-i18n="pricing.packages.site-vitrine.name">Site vitrine</strong><small data-i18n="pricing.packages.site-vitrine.detail">Jusqu&#x27;à 5 pages</small></span>
+                            <span class="oneoff__price"><span class="money" data-usd="890">890 $</span></span>
+                            <a class="btn btn--outline btn--sm" href="?offre=site-vitrine#devis" data-offer="site-vitrine"><span data-i18n="pricing.order">Commander</span></a>
+                        </li>
+                        <li class="oneoff">
+                            <span class="oneoff__icon"><svg class="icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M9 7V5a2 2 0 012-2h2a2 2 0 012 2v2M3 12h18M12 11v2"/></svg></span>
+                            <span class="oneoff__body"><strong data-i18n="pricing.packages.site-entreprise.name">Site entreprise</strong><small data-i18n="pricing.packages.site-entreprise.detail">Jusqu&#x27;à 10 pages</small></span>
+                            <span class="oneoff__price"><span class="money" data-usd="1490">1 490 $</span></span>
+                            <a class="btn btn--outline btn--sm" href="?offre=site-entreprise#devis" data-offer="site-entreprise"><span data-i18n="pricing.order">Commander</span></a>
+                        </li>
+                        <li class="oneoff">
+                            <span class="oneoff__icon"><svg class="icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M3 4h2l2.5 11h11L21 7H6.5"/><circle cx="9" cy="19" r="1.5"/><circle cx="17" cy="19" r="1.5"/></svg></span>
+                            <span class="oneoff__body"><strong data-i18n="pricing.packages.site-ecommerce.name">Site e-commerce</strong><small data-i18n="pricing.packages.site-ecommerce.detail">Jusqu&#x27;à 30 produits</small></span>
+                            <span class="oneoff__price"><span class="money" data-usd="2490">2 490 $</span></span>
+                            <a class="btn btn--outline btn--sm" href="?offre=site-ecommerce#devis" data-offer="site-ecommerce"><span data-i18n="pricing.order">Commander</span></a>
+                        </li>
+                        <li class="oneoff">
+                            <span class="oneoff__icon"><svg class="icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 8h18M9 12l-2 2 2 2M15 12l2 2-2 2M13 11l-2 6"/></svg></span>
+                            <span class="oneoff__body"><strong data-i18n="pricing.packages.sur-mesure.name">Site sur mesure / application web</strong><small data-i18n="pricing.packages.sur-mesure.detail">Fonctionnalités spécifiques, logiciel métier</small></span>
+                            <span class="oneoff__price"><span data-i18n="ui.quote_only">Sur devis</span></span>
+                            <a class="btn btn--outline btn--sm" href="?offre=sur-mesure#devis" data-offer="sur-mesure"><span data-i18n="pricing.ask_quote">Demander un devis</span></a>
+                        </li>
+                </ul>
+            </div>
+            <ul class="guarantees"><li><svg class="icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span data-i18n="pricing.guarantees.0">Adapté au mobile</span></li><li><svg class="icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span data-i18n="pricing.guarantees.1">Sécurité SSL</span></li><li><svg class="icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span data-i18n="pricing.guarantees.2">Hébergement fiable</span></li><li><svg class="icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span data-i18n="pricing.guarantees.3">Paiement dans votre devise</span></li><li><svg class="icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span data-i18n="pricing.guarantees.4">Support dédié</span></li></ul>
+        </div>
+    </section>
+
+    <section class="section" id="applications" aria-labelledby="apps-titre">
+        <div class="container">
+            <header class="section-head section-head--center reveal">
+                <p class="eyebrow" data-i18n="apps.eyebrow">Applications prêtes à l&#x27;emploi</p>
+                <h2 data-i18n-html="apps.title" id="apps-titre">Des applications pour <span class="accent">gagner du temps dès aujourd&#x27;hui</span></h2>
+                <p data-i18n="apps.lead">Pas besoin de partir de zéro : ces applications sont déjà développées, nous les installons et les adaptons à votre entreprise en quelques jours.</p>
+            </header>
+            <div class="apps-grid">
+                <article class="app-card reveal">
+                    <div class="app-card__preview" aria-hidden="true">
+                        <span class="app-card__dots"><i></i><i></i><i></i></span>
+                        <span class="app-card__bar"></span>
+                        <span class="app-card__bar app-card__bar--short"></span>
+                        <span class="app-card__chart"><i style="height:40%"></i><i style="height:65%"></i><i style="height:50%"></i><i style="height:80%"></i><i style="height:60%"></i><i style="height:90%"></i></span>
+                    </div>
+                    <p class="app-card__category" data-i18n="apps.items.app-reservation.category">Salons, cabinets, restaurants</p>
+                    <h3 data-i18n="apps.items.app-reservation.name">Réservation en ligne</h3>
+                    <p data-i18n="apps.items.app-reservation.text">Vos clients réservent un créneau 24 h / 24, reçoivent des rappels automatiques et vous gérez votre agenda depuis un tableau de bord.</p>
+                    <ul class="tags"><li data-i18n="apps.items.app-reservation.features.0">Agenda &amp; créneaux</li><li data-i18n="apps.items.app-reservation.features.1">Rappels email / SMS</li><li data-i18n="apps.items.app-reservation.features.2">Paiement d&#x27;acompte</li></ul>
+                    <div class="app-card__footer">
+                        <p class="price price--sm"><span class="price__from" data-i18n="ui.from">dès</span> <span class="price__amount"><span class="money" data-usd="19">19 $</span></span><span class="price__unit" data-i18n="ui.per_month">/mois</span></p>
+                        <a class="btn btn--primary btn--sm" href="?offre=app-reservation#devis" data-offer="app-reservation"><span data-i18n="apps.demo">Demander une démo</span></a>
+                    </div>
+                </article>
+                <article class="app-card reveal">
+                    <div class="app-card__preview" aria-hidden="true">
+                        <span class="app-card__dots"><i></i><i></i><i></i></span>
+                        <span class="app-card__bar"></span>
+                        <span class="app-card__bar app-card__bar--short"></span>
+                        <span class="app-card__chart"><i style="height:40%"></i><i style="height:65%"></i><i style="height:50%"></i><i style="height:80%"></i><i style="height:60%"></i><i style="height:90%"></i></span>
+                    </div>
+                    <p class="app-card__category" data-i18n="apps.items.app-facturation.category">Artisans, indépendants, TPE</p>
+                    <h3 data-i18n="apps.items.app-facturation.name">Devis &amp; facturation</h3>
+                    <p data-i18n="apps.items.app-facturation.text">Créez vos devis et factures en quelques clics, suivez les paiements et exportez votre comptabilité.</p>
+                    <ul class="tags"><li data-i18n="apps.items.app-facturation.features.0">Devis → facture</li><li data-i18n="apps.items.app-facturation.features.1">Suivi des impayés</li><li data-i18n="apps.items.app-facturation.features.2">Export comptable</li></ul>
+                    <div class="app-card__footer">
+                        <p class="price price--sm"><span class="price__from" data-i18n="ui.from">dès</span> <span class="price__amount"><span class="money" data-usd="15">15 $</span></span><span class="price__unit" data-i18n="ui.per_month">/mois</span></p>
+                        <a class="btn btn--primary btn--sm" href="?offre=app-facturation#devis" data-offer="app-facturation"><span data-i18n="apps.demo">Demander une démo</span></a>
+                    </div>
+                </article>
+                <article class="app-card reveal">
+                    <div class="app-card__preview" aria-hidden="true">
+                        <span class="app-card__dots"><i></i><i></i><i></i></span>
+                        <span class="app-card__bar"></span>
+                        <span class="app-card__bar app-card__bar--short"></span>
+                        <span class="app-card__chart"><i style="height:40%"></i><i style="height:65%"></i><i style="height:50%"></i><i style="height:80%"></i><i style="height:60%"></i><i style="height:90%"></i></span>
+                    </div>
+                    <p class="app-card__category" data-i18n="apps.items.app-stock.category">Commerces, grossistes</p>
+                    <h3 data-i18n="apps.items.app-stock.name">Gestion de stock &amp; ventes</h3>
+                    <p data-i18n="apps.items.app-stock.text">Suivez vos entrées, sorties et ventes en temps réel, avec alertes de rupture et statistiques claires.</p>
+                    <ul class="tags"><li data-i18n="apps.items.app-stock.features.0">Inventaire en temps réel</li><li data-i18n="apps.items.app-stock.features.1">Alertes de rupture</li><li data-i18n="apps.items.app-stock.features.2">Rapports de ventes</li></ul>
+                    <div class="app-card__footer">
+                        <p class="price price--sm"><span class="price__from" data-i18n="ui.from">dès</span> <span class="price__amount"><span class="money" data-usd="25">25 $</span></span><span class="price__unit" data-i18n="ui.per_month">/mois</span></p>
+                        <a class="btn btn--primary btn--sm" href="?offre=app-stock#devis" data-offer="app-stock"><span data-i18n="apps.demo">Demander une démo</span></a>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <section class="section section--alt" id="methode" aria-labelledby="methode-titre">
+        <div class="container">
+            <header class="section-head section-head--center reveal">
+                <p class="eyebrow" data-i18n="process.eyebrow">Comment ça marche</p>
+                <h2 data-i18n-html="process.title" id="methode-titre">Un processus simple, <span class="accent">sans mauvaise surprise</span></h2>
+                
+            </header>
+            <ol class="steps">
+                <li class="step reveal">
+                    <span class="step__num">01</span>
+                    <h3 data-i18n="process.items.0.title">Échange découverte</h3>
+                    <p data-i18n="process.items.0.text">Un appel gratuit de 30 minutes pour comprendre votre activité, vos objectifs et votre budget.</p>
+                </li>
+                <li class="step reveal">
+                    <span class="step__num">02</span>
+                    <h3 data-i18n="process.items.1.title">Proposition &amp; devis</h3>
+                    <p data-i18n="process.items.1.text">Vous recevez une proposition claire : pages, fonctionnalités, délais et prix fixe en dollars. Aucune surprise.</p>
+                </li>
+                <li class="step reveal">
+                    <span class="step__num">03</span>
+                    <h3 data-i18n="process.items.2.title">Acompte &amp; design</h3>
+                    <p data-i18n="process.items.2.text">Vous réglez l&#x27;acompte dans votre devise, nous concevons la maquette et vous la validez.</p>
+                </li>
+                <li class="step reveal">
+                    <span class="step__num">04</span>
+                    <h3 data-i18n="process.items.3.title">Développement &amp; mise en ligne</h3>
+                    <p data-i18n="process.items.3.text">Développement, tests sur tous les écrans, domaine, SSL et référencement, puis lancement.</p>
+                </li>
+                <li class="step reveal">
+                    <span class="step__num">05</span>
+                    <h3 data-i18n="process.items.4.title">Suivi &amp; évolution</h3>
+                    <p data-i18n="process.items.4.text">Maintenance, sauvegardes, mises à jour et nouvelles fonctionnalités selon vos besoins.</p>
+                </li>
+            </ol>
+        </div>
+    </section>
+
+    <section class="section" id="paiement" aria-labelledby="paiement-titre">
+        <div class="container">
+            <header class="section-head section-head--center reveal">
+                <p class="eyebrow" data-i18n="payment.eyebrow">Moyens de paiement</p>
+                <h2 data-i18n-html="payment.title" id="paiement-titre">Payez <span class="accent">dans votre devise</span>, où que vous soyez</h2>
+                <p data-i18n="payment.lead">Nos prix sont fixés en dollars américains (USD). Vous payez dans votre monnaie : la conversion est faite automatiquement par votre banque ou le prestataire de paiement, et les fonds arrivent sur notre compte professionnel FNB.</p>
+            </header>
+            <div class="currency-bar"><div class="currency">
+                    <label for="devise-paiement"><svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 010 18M12 3a14 14 0 000 18"/></svg><span data-i18n="ui.currency">Devise</span></label>
+                    <select id="devise-paiement" class="currency__select" data-currency-select><option value="USD">USD — Dollar américain</option><option value="ZAR">ZAR — Rand sud-africain</option><option value="EUR">EUR — Euro</option><option value="GBP">GBP — Livre sterling</option><option value="CDF">CDF — Franc congolais</option><option value="XAF">XAF — Franc CFA (CEMAC)</option><option value="XOF">XOF — Franc CFA (UEMOA)</option><option value="KES">KES — Shilling kényan</option><option value="TZS">TZS — Shilling tanzanien</option><option value="UGX">UGX — Shilling ougandais</option><option value="RWF">RWF — Franc rwandais</option><option value="BIF">BIF — Franc burundais</option><option value="NGN">NGN — Naira nigérian</option><option value="ZMW">ZMW — Kwacha zambien</option><option value="BWP">BWP — Pula botswanais</option><option value="AOA">AOA — Kwanza angolais</option><option value="CAD">CAD — Dollar canadien</option><option value="CHF">CHF — Franc suisse</option></select>
+                </div><p class="currency-bar__note" data-i18n="ui.currency_note">Prix de référence en dollars US. Les montants dans une autre devise sont indicatifs (taux du jour).</p></div>
+            <div class="pay-grid">
+                <article class="pay-card reveal">
+                    <span class="card__icon"><svg class="icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="2.5" y="5" width="19" height="14" rx="2"/><path d="M2.5 10h19M6 15h4"/></svg></span>
+                    <h3 data-i18n="payment.methods.carte.title">Carte bancaire</h3>
+                    <p data-i18n="payment.methods.carte.text">Visa, Mastercard, Apple Pay et Google Pay. Cliquez, saisissez votre carte sur la page sécurisée : c&#x27;est payé, depuis n&#x27;importe quel pays.</p>
+                    <a class="btn btn--primary btn--sm btn--block" href="https://wa.me/27000000000" target="_blank" rel="noopener" data-pay="carte" data-pay-link=""><span data-i18n="payment.methods.carte.button">Payer par carte</span></a>
+                </article><article class="pay-card reveal">
+                    <span class="card__icon"><svg class="icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M3 12h4l3-8 4 16 3-8h4"/></svg></span>
+                    <h3 data-i18n="payment.methods.payshap.title">PayShap</h3>
+                    <p data-i18n="payment.methods.payshap.text">Paiement instantané depuis l&#x27;application de votre banque sud-africaine (FNB, Absa, Capitec, Nedbank, Standard Bank…) avec notre ShapID.</p>
+                    <a class="btn btn--outline btn--sm btn--block" href="#coordonnees"><span data-i18n="payment.methods.payshap.button">Voir notre ShapID</span></a>
+                </article><article class="pay-card reveal">
+                    <span class="card__icon"><svg class="icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M3 10l9-6 9 6M5 10v8M9.5 10v8M14.5 10v8M19 10v8M3 20h18"/></svg></span>
+                    <h3 data-i18n="payment.methods.eft.title">EFT / virement local</h3>
+                    <p data-i18n="payment.methods.eft.text">Virement EFT ou instantané depuis toute banque sud-africaine vers notre compte FNB.</p>
+                    <a class="btn btn--outline btn--sm btn--block" href="#coordonnees"><span data-i18n="payment.methods.eft.button">Voir les coordonnées</span></a>
+                </article><article class="pay-card reveal">
+                    <span class="card__icon"><svg class="icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M4 7h14a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2V6a2 2 0 012-2h11"/><circle cx="16" cy="13.5" r="1.3"/></svg></span>
+                    <h3 data-i18n="payment.methods.cash.title">Espèces (cash)</h3>
+                    <p data-i18n="payment.methods.cash.text">Déposez des espèces à un guichet automatique (ATM) ou une agence FNB, avec notre numéro de compte et votre numéro de devis en référence.</p>
+                    <a class="btn btn--outline btn--sm btn--block" href="#coordonnees"><span data-i18n="payment.methods.cash.button">Voir les coordonnées</span></a>
+                </article><article class="pay-card reveal">
+                    <span class="card__icon"><svg class="icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="7" y="2" width="10" height="20" rx="2"/><path d="M11 18h2"/></svg></span>
+                    <h3 data-i18n="payment.methods.mobile.title">Mobile Money</h3>
+                    <p data-i18n="payment.methods.mobile.text">M-Pesa, Airtel Money, Orange Money, MTN MoMo : envoyez depuis votre portefeuille vers notre compte FNB avec un service de transfert (WorldRemit, Mukuru…). Écrivez-nous, nous vous guidons.</p>
+                    <a class="btn btn--primary btn--sm btn--block" href="https://wa.me/27000000000" target="_blank" rel="noopener" data-pay="mobile" data-pay-link=""><span data-i18n="payment.methods.mobile.button">Payer via WhatsApp</span></a>
+                </article><article class="pay-card reveal">
+                    <span class="card__icon"><svg class="icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 010 18M12 3a14 14 0 000 18"/></svg></span>
+                    <h3 data-i18n="payment.methods.swift.title">Virement international</h3>
+                    <p data-i18n="payment.methods.swift.text">Virement SWIFT depuis n&#x27;importe quelle banque dans le monde vers notre compte FNB.</p>
+                    <a class="btn btn--outline btn--sm btn--block" href="#coordonnees"><span data-i18n="payment.methods.swift.button">Voir les coordonnées</span></a>
+                </article>
+            </div>
+            <div class="bank" id="coordonnees">
+                <div class="bank__details">
+                    <h3><svg class="icon" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M3 10l9-6 9 6M5 10v8M9.5 10v8M14.5 10v8M19 10v8M3 20h18"/></svg><span data-i18n="payment.bank_title">Coordonnées bancaires FNB</span></h3>
+                    <p class="bank__lead" data-i18n="payment.bank_lead">Pour PayShap, EFT, dépôt d&#x27;espèces, Mobile Money et virements internationaux (SWIFT).</p>
+                    <dl>
+                        <div class="bank__row">
+                            <dt><span data-i18n="payment.bank_fields.banque">Banque</span></dt>
+                            <dd><span class="bank__value">First National Bank (FNB), South Africa</span><button class="copy-btn" type="button" data-copy="First National Bank (FNB), South Africa" data-i18n-attr="aria-label:ui.copy" aria-label="Copier"><svg class="icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V5a2 2 0 012-2h8"/></svg></button></dd>
+                        </div><div class="bank__row">
+                            <dt><span data-i18n="payment.bank_fields.titulaire">Titulaire du compte</span></dt>
+                            <dd><span class="bank__value">Baraza All Services</span><button class="copy-btn" type="button" data-copy="Baraza All Services" data-i18n-attr="aria-label:ui.copy" aria-label="Copier"><svg class="icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V5a2 2 0 012-2h8"/></svg></button></dd>
+                        </div><div class="bank__row">
+                            <dt><span data-i18n="payment.bank_fields.numero">Numéro de compte</span></dt>
+                            <dd><span class="bank__value">À COMPLÉTER</span><button class="copy-btn" type="button" data-copy="À COMPLÉTER" data-i18n-attr="aria-label:ui.copy" aria-label="Copier"><svg class="icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V5a2 2 0 012-2h8"/></svg></button></dd>
+                        </div><div class="bank__row">
+                            <dt><span data-i18n="payment.bank_fields.shapid">ShapID (PayShap)</span></dt>
+                            <dd><span class="bank__value">À COMPLÉTER</span><button class="copy-btn" type="button" data-copy="À COMPLÉTER" data-i18n-attr="aria-label:ui.copy" aria-label="Copier"><svg class="icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V5a2 2 0 012-2h8"/></svg></button></dd>
+                        </div><div class="bank__row">
+                            <dt><span data-i18n="payment.bank_fields.type">Type de compte</span></dt>
+                            <dd><span class="bank__value">Business Cheque Account</span><button class="copy-btn" type="button" data-copy="Business Cheque Account" data-i18n-attr="aria-label:ui.copy" aria-label="Copier"><svg class="icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V5a2 2 0 012-2h8"/></svg></button></dd>
+                        </div><div class="bank__row">
+                            <dt><span data-i18n="payment.bank_fields.code_agence">Code agence (branch code)</span></dt>
+                            <dd><span class="bank__value">250655</span><button class="copy-btn" type="button" data-copy="250655" data-i18n-attr="aria-label:ui.copy" aria-label="Copier"><svg class="icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V5a2 2 0 012-2h8"/></svg></button></dd>
+                        </div><div class="bank__row">
+                            <dt><span data-i18n="payment.bank_fields.swift">Code SWIFT / BIC</span></dt>
+                            <dd><span class="bank__value">FIRNZAJJ</span><button class="copy-btn" type="button" data-copy="FIRNZAJJ" data-i18n-attr="aria-label:ui.copy" aria-label="Copier"><svg class="icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V5a2 2 0 012-2h8"/></svg></button></dd>
+                        </div><div class="bank__row">
+                            <dt><span data-i18n="payment.bank_fields.adresse_banque">Adresse de la banque</span></dt>
+                            <dd><span class="bank__value">First National Bank, Johannesburg, South Africa</span><button class="copy-btn" type="button" data-copy="First National Bank, Johannesburg, South Africa" data-i18n-attr="aria-label:ui.copy" aria-label="Copier"><svg class="icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V5a2 2 0 012-2h8"/></svg></button></dd>
+                        </div><div class="bank__row">
+                            <dt><span data-i18n="payment.bank_fields.reference">Référence du paiement</span></dt>
+                            <dd><span class="bank__value" data-i18n="payment.reference_value">Votre numéro de devis ou votre nom</span></dd>
+                        </div>
+                    </dl>
+                </div>
+                <div class="bank__steps">
+                    <h3 data-i18n="payment.steps_title">Comment payer</h3>
+                    <ol class="pay-steps"><li><span data-i18n="payment.steps.0">Recevez votre devis ou votre facture en dollars (USD).</span></li><li><span data-i18n="payment.steps.1">Choisissez le moyen de paiement qui vous convient et payez dans votre devise.</span></li><li><span data-i18n="payment.steps.2">Indiquez votre numéro de devis en référence.</span></li><li><span data-i18n="payment.steps.3">Envoyez la preuve de paiement sur WhatsApp : nous confirmons sous 24 h.</span></li></ol>
+                    <p class="bank__safety"><svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V7a4 4 0 018 0v4"/></svg><span data-i18n="payment.safety">Nous ne vous demanderons jamais vos codes, mots de passe ou code PIN bancaires.</span></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section section--alt" id="faq" aria-labelledby="faq-titre">
+        <div class="container container--narrow">
+            <header class="section-head section-head--center reveal">
+                <p class="eyebrow" data-i18n="faq.eyebrow">Questions fréquentes</p>
+                <h2 data-i18n-html="faq.title" id="faq-titre">Vous avez des <span class="accent">questions ?</span></h2>
+                
+            </header>
+            <div class="faq">
+                <details class="faq__item" open>
+                    <summary><span data-i18n="faq.items.0.q">Dans quelle devise dois-je payer ?</span><span class="faq__icon"><svg class="icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 5v14M5 12h14"/></svg></span></summary>
+                    <p data-i18n="faq.items.0.a">Nos prix sont fixés en dollars américains (USD), mais vous payez dans votre propre devise : rand, euro, franc congolais, franc CFA, shilling, naira… La conversion est faite par votre banque, le paiement par carte ou le service de transfert au taux du jour.</p>
+                </details>
+                <details class="faq__item">
+                    <summary><span data-i18n="faq.items.1.q">Quelle est la différence entre l&#x27;abonnement mensuel et le paiement unique ?</span><span class="faq__icon"><svg class="icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 5v14M5 12h14"/></svg></span></summary>
+                    <p data-i18n="faq.items.1.a">Avec l&#x27;abonnement, vous payez des frais de mise en place réduits puis un montant mensuel qui inclut l&#x27;hébergement, le SSL, la maintenance et des modifications de contenu. Avec le paiement unique, le site vous appartient après paiement ; l&#x27;hébergement et la maintenance peuvent être ajoutés séparément.</p>
+                </details>
+                <details class="faq__item">
+                    <summary><span data-i18n="faq.items.2.q">Combien de temps faut-il pour créer mon site ?</span><span class="faq__icon"><svg class="icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 5v14M5 12h14"/></svg></span></summary>
+                    <p data-i18n="faq.items.2.a">Comptez en général 5 à 10 jours ouvrés pour une landing page ou un site vitrine, et 2 à 6 semaines pour une boutique en ligne ou une application sur mesure, selon la rapidité de réception des contenus.</p>
+                </details>
+                <details class="faq__item">
+                    <summary><span data-i18n="faq.items.3.q">Comment se passe le paiement d&#x27;un projet ?</span><span class="faq__icon"><svg class="icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 5v14M5 12h14"/></svg></span></summary>
+                    <p data-i18n="faq.items.3.a">Pour un projet unique : 50 % d&#x27;acompte à la commande et 50 % à la mise en ligne. Pour un abonnement : les frais de mise en place à la commande, puis un paiement mensuel.</p>
+                </details>
+                <details class="faq__item">
+                    <summary><span data-i18n="faq.items.4.q">Le nom de domaine est-il inclus ?</span><span class="faq__icon"><svg class="icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 5v14M5 12h14"/></svg></span></summary>
+                    <p data-i18n="faq.items.4.a">Nous nous occupons de l&#x27;enregistrement ou du transfert de votre nom de domaine. Le coût du domaine lui-même (environ 10 à 20 $ par an) est facturé à prix coûtant.</p>
+                </details>
+                <details class="faq__item">
+                    <summary><span data-i18n="faq.items.5.q">Travaillez-vous avec des clients à l&#x27;étranger ?</span><span class="faq__icon"><svg class="icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 5v14M5 12h14"/></svg></span></summary>
+                    <p data-i18n="faq.items.5.a">Oui. Tout se fait à distance : appels vidéo, WhatsApp et email. Nous accompagnons des entreprises en Afrique, en Europe et ailleurs.</p>
+                </details>
+            </div>
+        </div>
+    </section>
+
+    <section class="section section--cta" id="devis" aria-labelledby="devis-titre">
+        <div class="container quote">
+            <div class="quote__intro">
+                <p class="eyebrow" data-i18n="quote.eyebrow">Devis gratuit</p>
+                <h2 data-i18n-html="quote.title" id="devis-titre">Parlons de <span class="accent">votre projet</span></h2>
+                <p data-i18n="quote.lead">Remplissez le formulaire : nous vous répondons sous 24 h ouvrées avec une proposition claire et un prix fixe. Vous préférez discuter directement ? Écrivez-nous sur WhatsApp.</p>
+                <ul class="contact-list">
+                    <li><a href="https://wa.me/27000000000" target="_blank" rel="noopener" data-wa><svg class="icon" width="22" height="22" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38a9.9 9.9 0 004.74 1.21c5.46 0 9.91-4.45 9.91-9.91C21.95 6.45 17.5 2 12.04 2zm0 18.15c-1.48 0-2.93-.4-4.2-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.2 8.2 0 01-1.26-4.38c0-4.54 3.7-8.24 8.25-8.24 4.54 0 8.24 3.7 8.24 8.24 0 4.55-3.7 8.24-8.24 8.24zm4.52-6.17c-.25-.12-1.47-.72-1.69-.81-.23-.08-.39-.12-.56.13-.16.24-.64.8-.78.97-.14.16-.29.18-.54.06-.25-.12-1.05-.39-1.99-1.23-.74-.66-1.23-1.47-1.38-1.72-.14-.25-.02-.38.11-.5.11-.11.25-.29.37-.43.13-.15.17-.25.25-.42.08-.16.04-.31-.02-.43-.06-.12-.56-1.34-.76-1.84-.2-.48-.41-.42-.56-.43h-.48c-.17 0-.43.06-.66.31-.22.25-.86.85-.86 2.07 0 1.22.89 2.4 1.01 2.56.12.17 1.75 2.67 4.23 3.74.59.26 1.05.41 1.41.52.59.19 1.13.16 1.56.1.48-.07 1.47-.6 1.67-1.18.21-.58.21-1.07.15-1.18-.06-.1-.23-.16-.48-.28z"/></svg><span><small data-i18n="quote.contact_whatsapp">WhatsApp</small>+27 00 000 0000</span></a></li>
+                    <li><a href="mailto:contact@example.com"><svg class="icon" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg><span><small data-i18n="quote.contact_email">Email</small>contact@example.com</span></a></li>
+                    <li><span class="contact-list__static"><svg class="icon" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 21s-7-6.2-7-11.5a7 7 0 0114 0C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg><span><small data-i18n="quote.contact_zone">Zone</small><span data-i18n="quote.zone">Afrique du Sud · Clients dans le monde entier</span></span></span></li>
+                </ul>
+                <div class="info-card">
+                    <h3><svg class="icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg><span data-i18n="hours.title">Heures d&#x27;ouverture</span></h3>
+                    <ul class="info-card__lines"><li><span data-i18n="hours.lines.0">Lundi – vendredi : 08:00 – 17:00</span></li><li><span data-i18n="hours.lines.1">Samedi : sur rendez-vous</span></li><li><span data-i18n="hours.lines.2">Hors jours fériés sud-africains</span></li></ul>
+                    <p class="info-card__note" data-i18n="hours.note">Rendez-vous en ligne ou sur place, sur réservation. Sur WhatsApp, nous répondons aussi en dehors de ces horaires.</p>
+                </div>
+                <ul class="trust-list"><li><svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span data-i18n="trust.items.0">Paiement en ligne sécurisé par carte</span></li><li><svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span data-i18n="trust.items.1">PayShap, EFT, espèces et Mobile Money</span></li><li><svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span data-i18n="trust.items.2">Clients en Afrique du Sud et à l&#x27;international</span></li><li><svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span data-i18n="trust.items.3">Support et maintenance après livraison</span></li><li><svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span data-i18n="trust.items.4">Devis gratuit sous 24 h</span></li></ul>
+            </div>
+            <div class="quote__form">
+                <div id="form-alert" role="status" hidden></div>
+                <form id="form-devis" name="devis" method="POST" action="/" class="form" novalidate data-netlify="true" netlify-honeypot="website">
+                    <input type="hidden" name="form-name" value="devis">
+                    <input type="hidden" name="langue" id="langue" value="fr">
+                    <input type="hidden" name="devise" id="devise" value="USD">
+                    <div class="form__row">
+                        <div class="field"><label for="name"><span data-i18n="quote.f_name">Nom complet</span></label><input type="text" id="name" name="name" autocomplete="name" data-i18n-attr="placeholder:quote.p_name" placeholder="Ex. Marie Dupont"></div>
+                        <div class="field"><label for="email"><span data-i18n="quote.f_email">Adresse email</span></label><input type="email" id="email" name="email" autocomplete="email" data-i18n-attr="placeholder:quote.p_email" placeholder="vous@entreprise.com"></div>
+                    </div>
+                    <div class="form__row">
+                        <div class="field"><label for="phone"><span data-i18n="quote.f_phone">Téléphone / WhatsApp</span> <span class="field__optional" data-i18n="quote.optional">(facultatif)</span></label><input type="tel" id="phone" name="phone" autocomplete="tel" data-i18n-attr="placeholder:quote.p_phone" placeholder="+27 00 000 0000"></div>
+                        <div class="field"><label for="company"><span data-i18n="quote.f_company">Entreprise</span> <span class="field__optional" data-i18n="quote.optional">(facultatif)</span></label><input type="text" id="company" name="company" autocomplete="organization" data-i18n-attr="placeholder:quote.p_company" placeholder="Nom de votre entreprise"></div>
+                    </div>
+                    <div class="form__row">
+                        <div class="field"><label for="country"><span data-i18n="quote.f_country">Pays</span> <span class="field__optional" data-i18n="quote.optional">(facultatif)</span></label><input type="text" id="country" name="country" autocomplete="country-name" data-i18n-attr="placeholder:quote.p_country" placeholder="Ex. RDC, Afrique du Sud, France…"></div>
+                        <div class="field"><label for="budget"><span data-i18n="quote.f_budget">Budget estimé (USD)</span> <span class="field__optional" data-i18n="quote.optional">(facultatif)</span></label><select id="budget" name="budget"><option value="" data-i18n="quote.o_budget">Sélectionnez (facultatif)</option><option value="lt500" data-i18n="quote.budgets.0">Moins de 500 $</option><option value="500-1500" data-i18n="quote.budgets.1">500 à 1 500 $</option><option value="1500-3000" data-i18n="quote.budgets.2">1 500 à 3 000 $</option><option value="3000-10000" data-i18n="quote.budgets.3">3 000 à 10 000 $</option><option value="gt10000" data-i18n="quote.budgets.4">Plus de 10 000 $</option></select></div>
+                    </div>
+                    <div class="field"><label for="offer"><span data-i18n="quote.f_offer">Offre qui vous intéresse</span></label><select id="offer" name="offer"><option value="" data-i18n="quote.o_offer">Choisissez une offre</option><option value="starter" data-i18n="offers.starter">Abonnement Starter — 29 $/mois</option><option value="business" data-i18n="offers.business">Abonnement Business — 49 $/mois</option><option value="business-pro" data-i18n="offers.business-pro">Abonnement Business Pro — 89 $/mois</option><option value="ecommerce" data-i18n="offers.ecommerce">Abonnement E-commerce — 129 $/mois</option><option value="landing-page" data-i18n="offers.landing-page">Landing page — 390 $ (paiement unique)</option><option value="site-vitrine" data-i18n="offers.site-vitrine">Site vitrine — 890 $ (paiement unique)</option><option value="site-entreprise" data-i18n="offers.site-entreprise">Site entreprise — 1 490 $ (paiement unique)</option><option value="site-ecommerce" data-i18n="offers.site-ecommerce">Site e-commerce — 2 490 $ (paiement unique)</option><option value="sur-mesure" data-i18n="offers.sur-mesure">Site sur mesure / application web — sur devis</option><option value="app-reservation" data-i18n="offers.app-reservation">Application : Réservation en ligne</option><option value="app-facturation" data-i18n="offers.app-facturation">Application : Devis &amp; facturation</option><option value="app-stock" data-i18n="offers.app-stock">Application : Gestion de stock &amp; ventes</option><option value="conseil" data-i18n="offers.conseil">Je ne sais pas encore, conseillez-moi</option></select></div>
+                    <div class="field"><label for="message"><span data-i18n="quote.f_message">Votre projet</span></label><textarea id="message" name="message" rows="5" data-i18n-attr="placeholder:quote.p_message" placeholder="Décrivez votre activité, vos objectifs et vos délais…"></textarea></div>
+                    <div class="field field--check"><label class="check"><input type="checkbox" id="consent" name="consent" value="oui"><span data-i18n="quote.f_consent">J&#x27;accepte d&#x27;être recontacté(e) au sujet de ma demande.</span></label></div>
+                    <div class="hp-field" aria-hidden="true"><label for="website">Ne pas remplir</label><input type="text" id="website" name="website" tabindex="-1" autocomplete="off"></div>
+                    <button class="btn btn--primary btn--lg btn--block" type="submit"><span data-i18n="quote.submit">Envoyer ma demande</span> <svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M21 3L3 10.5l7 3 3 7L21 3z"/><path d="M10 13.5L21 3"/></svg></button>
+                    <p class="form__note" data-i18n="quote.note">Gratuit et sans engagement. Vos données ne sont utilisées que pour répondre à votre demande.</p>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <section class="final-cta">
+        <div class="container final-cta__inner">
+            <span class="final-cta__icon"><svg class="icon" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 15c-1.5 1.5-2 4.5-2 6 1.5 0 4.5-.5 6-2M9 15l-3-3c1-4 4.5-9 12-9 0 7.5-5 11-9 12z"/><circle cx="15" cy="9" r="1.5"/></svg></span>
+            <h2 data-i18n="final.title">Prêt à mettre votre entreprise en ligne ?</h2>
+            <p data-i18n="final.lead">Sites professionnels dès 29 $/mois. Lancement rapide, tarifs clairs, paiement dans votre devise.</p>
+            <div class="hero__actions hero__actions--center">
+                <a class="btn btn--primary btn--lg" href="#devis"><span data-i18n="final.cta">Obtenir mon site</span> <svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+                <a class="btn btn--whatsapp btn--lg" href="https://wa.me/27000000000" target="_blank" rel="noopener" data-wa><svg class="icon" width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38a9.9 9.9 0 004.74 1.21c5.46 0 9.91-4.45 9.91-9.91C21.95 6.45 17.5 2 12.04 2zm0 18.15c-1.48 0-2.93-.4-4.2-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.2 8.2 0 01-1.26-4.38c0-4.54 3.7-8.24 8.25-8.24 4.54 0 8.24 3.7 8.24 8.24 0 4.55-3.7 8.24-8.24 8.24zm4.52-6.17c-.25-.12-1.47-.72-1.69-.81-.23-.08-.39-.12-.56.13-.16.24-.64.8-.78.97-.14.16-.29.18-.54.06-.25-.12-1.05-.39-1.99-1.23-.74-.66-1.23-1.47-1.38-1.72-.14-.25-.02-.38.11-.5.11-.11.25-.29.37-.43.13-.15.17-.25.25-.42.08-.16.04-.31-.02-.43-.06-.12-.56-1.34-.76-1.84-.2-.48-.41-.42-.56-.43h-.48c-.17 0-.43.06-.66.31-.22.25-.86.85-.86 2.07 0 1.22.89 2.4 1.01 2.56.12.17 1.75 2.67 4.23 3.74.59.26 1.05.41 1.41.52.59.19 1.13.16 1.56.1.48-.07 1.47-.6 1.67-1.18.21-.58.21-1.07.15-1.18-.06-.1-.23-.16-.48-.28z"/></svg> <span data-i18n="final.whatsapp">Discuter sur WhatsApp</span></a>
+            </div>
+        </div>
+    </section>
+</main>
+
+<footer class="site-footer">
+    <div class="container site-footer__grid">
+        <div>
+            <a class="logo" href="#contenu">
+                <span class="logo__mark">BA</span>
+                <span class="logo__text"><strong>Baraza All Services</strong><small data-i18n="brand.tagline">Développement Web &amp; Logiciel</small></span>
+            </a>
+            <p class="site-footer__about" data-i18n="footer.about">Sites web, boutiques en ligne, applications et logiciels sur mesure pour les entreprises qui veulent grandir.</p>
+            <div class="socials"><a href="https://wa.me/27000000000" target="_blank" rel="noopener" aria-label="WhatsApp" data-wa><svg class="icon" width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38a9.9 9.9 0 004.74 1.21c5.46 0 9.91-4.45 9.91-9.91C21.95 6.45 17.5 2 12.04 2zm0 18.15c-1.48 0-2.93-.4-4.2-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.2 8.2 0 01-1.26-4.38c0-4.54 3.7-8.24 8.25-8.24 4.54 0 8.24 3.7 8.24 8.24 0 4.55-3.7 8.24-8.24 8.24zm4.52-6.17c-.25-.12-1.47-.72-1.69-.81-.23-.08-.39-.12-.56.13-.16.24-.64.8-.78.97-.14.16-.29.18-.54.06-.25-.12-1.05-.39-1.99-1.23-.74-.66-1.23-1.47-1.38-1.72-.14-.25-.02-.38.11-.5.11-.11.25-.29.37-.43.13-.15.17-.25.25-.42.08-.16.04-.31-.02-.43-.06-.12-.56-1.34-.76-1.84-.2-.48-.41-.42-.56-.43h-.48c-.17 0-.43.06-.66.31-.22.25-.86.85-.86 2.07 0 1.22.89 2.4 1.01 2.56.12.17 1.75 2.67 4.23 3.74.59.26 1.05.41 1.41.52.59.19 1.13.16 1.56.1.48-.07 1.47-.6 1.67-1.18.21-.58.21-1.07.15-1.18-.06-.1-.23-.16-.48-.28z"/></svg></a></div>
+        </div>
+        <div>
+            <h3 data-i18n="footer.services">Nos services</h3>
+            <ul class="site-footer__links"><li><a href="#services"><span data-i18n="services.items.0.title">Sites vitrines professionnels</span></a></li><li><a href="#services"><span data-i18n="services.items.1.title">Boutiques en ligne</span></a></li><li><a href="#services"><span data-i18n="services.items.2.title">Logiciels sur mesure</span></a></li><li><a href="#services"><span data-i18n="services.items.3.title">Portails &amp; espaces clients</span></a></li><li><a href="#services"><span data-i18n="services.items.4.title">Intégrations &amp; API</span></a></li><li><a href="#services"><span data-i18n="services.items.5.title">Design UX / UI responsive</span></a></li><li><a href="#services"><span data-i18n="services.items.6.title">Applications web &amp; mobiles</span></a></li><li><a href="#services"><span data-i18n="services.items.7.title">Sécurité &amp; maintenance</span></a></li><li><a href="#services"><span data-i18n="services.items.8.title">Performance &amp; SEO</span></a></li></ul>
+        </div>
+        <div>
+            <h3 data-i18n="footer.info">Informations clients</h3>
+            <ul class="site-footer__links"><li><a href="#paiement"><span data-i18n="footer.info_links.0">Moyens de paiement</span></a></li><li><a href="#tarifs"><span data-i18n="footer.info_links.1">Tarifs</span></a></li><li><a href="#faq"><span data-i18n="footer.info_links.2">Questions fréquentes</span></a></li><li><a href="conditions.html"><span data-i18n="footer.info_links.3">Conditions générales</span></a></li><li><a href="remboursements.html"><span data-i18n="footer.info_links.4">Remboursements &amp; annulations</span></a></li><li><a href="garantie.html"><span data-i18n="footer.info_links.5">Garantie &amp; support</span></a></li><li><a href="confidentialite.html"><span data-i18n="footer.info_links.6">Confidentialité</span></a></li></ul>
+        </div>
+        <div>
+            <h3 data-i18n="footer.contact">Contact</h3>
+            <ul class="footer-contact">
+                <li><span class="footer-contact__icon"><svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="7" y="2" width="10" height="20" rx="2"/><path d="M11 18h2"/></svg></span><a href="tel:+27000000000">+27 00 000 0000</a></li>
+                <li><span class="footer-contact__icon"><svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38a9.9 9.9 0 004.74 1.21c5.46 0 9.91-4.45 9.91-9.91C21.95 6.45 17.5 2 12.04 2zm0 18.15c-1.48 0-2.93-.4-4.2-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.2 8.2 0 01-1.26-4.38c0-4.54 3.7-8.24 8.25-8.24 4.54 0 8.24 3.7 8.24 8.24 0 4.55-3.7 8.24-8.24 8.24zm4.52-6.17c-.25-.12-1.47-.72-1.69-.81-.23-.08-.39-.12-.56.13-.16.24-.64.8-.78.97-.14.16-.29.18-.54.06-.25-.12-1.05-.39-1.99-1.23-.74-.66-1.23-1.47-1.38-1.72-.14-.25-.02-.38.11-.5.11-.11.25-.29.37-.43.13-.15.17-.25.25-.42.08-.16.04-.31-.02-.43-.06-.12-.56-1.34-.76-1.84-.2-.48-.41-.42-.56-.43h-.48c-.17 0-.43.06-.66.31-.22.25-.86.85-.86 2.07 0 1.22.89 2.4 1.01 2.56.12.17 1.75 2.67 4.23 3.74.59.26 1.05.41 1.41.52.59.19 1.13.16 1.56.1.48-.07 1.47-.6 1.67-1.18.21-.58.21-1.07.15-1.18-.06-.1-.23-.16-.48-.28z"/></svg></span><a href="https://wa.me/27000000000" target="_blank" rel="noopener" data-wa>WhatsApp</a></li>
+                <li><span class="footer-contact__icon"><svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg></span><a href="mailto:contact@example.com">contact@example.com</a></li>
+                <li><span class="footer-contact__icon"><svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 21s-7-6.2-7-11.5a7 7 0 0114 0C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg></span><span><strong>Baraza All Services</strong><br>À COMPLÉTER (rue)<br>Ville, Province<br>Code postal<br>South Africa</span></li>
+            </ul>
+        </div>
+    </div>
+    <div class="container site-footer__bottom">
+        <p>© <span id="year">2026</span> Baraza All Services. <span data-i18n="ui.rights">Tous droits réservés.</span></p>
+        <nav class="site-footer__legal"><a href="conditions.html"><span data-i18n="legal.terms.title">Conditions générales</span></a><a href="remboursements.html"><span data-i18n="legal.refunds.title">Remboursements &amp; annulations</span></a><a href="garantie.html"><span data-i18n="legal.warranty.title">Garantie &amp; support</span></a><a href="confidentialite.html"><span data-i18n="legal.privacy.title">Politique de confidentialité</span></a></nav>
+    </div>
+</footer>
+
+<a class="wa-float" href="https://wa.me/27000000000" target="_blank" rel="noopener" data-wa data-i18n-attr="aria-label:ui.whatsapp" aria-label="Me contacter sur WhatsApp"><svg class="icon" width="30" height="30" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38a9.9 9.9 0 004.74 1.21c5.46 0 9.91-4.45 9.91-9.91C21.95 6.45 17.5 2 12.04 2zm0 18.15c-1.48 0-2.93-.4-4.2-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.2 8.2 0 01-1.26-4.38c0-4.54 3.7-8.24 8.25-8.24 4.54 0 8.24 3.7 8.24 8.24 0 4.55-3.7 8.24-8.24 8.24zm4.52-6.17c-.25-.12-1.47-.72-1.69-.81-.23-.08-.39-.12-.56.13-.16.24-.64.8-.78.97-.14.16-.29.18-.54.06-.25-.12-1.05-.39-1.99-1.23-.74-.66-1.23-1.47-1.38-1.72-.14-.25-.02-.38.11-.5.11-.11.25-.29.37-.43.13-.15.17-.25.25-.42.08-.16.04-.31-.02-.43-.06-.12-.56-1.34-.76-1.84-.2-.48-.41-.42-.56-.43h-.48c-.17 0-.43.06-.66.31-.22.25-.86.85-.86 2.07 0 1.22.89 2.4 1.01 2.56.12.17 1.75 2.67 4.23 3.74.59.26 1.05.41 1.41.52.59.19 1.13.16 1.56.1.48-.07 1.47-.6 1.67-1.18.21-.58.21-1.07.15-1.18-.06-.1-.23-.16-.48-.28z"/></svg></a>
+
+<div class="mobile-bar">
+    <a class="mobile-bar__brand" href="tel:+27000000000" data-i18n-attr="aria-label:footer.call" aria-label="Appeler">
+        <span class="logo__mark">BA</span>
+        <span class="mobile-bar__text"><strong>Baraza All Services</strong><small>+27 00 000 0000</small></span>
+    </a>
+    <a class="btn btn--whatsapp mobile-bar__wa" href="https://wa.me/27000000000" target="_blank" rel="noopener" data-wa><svg class="icon" width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38a9.9 9.9 0 004.74 1.21c5.46 0 9.91-4.45 9.91-9.91C21.95 6.45 17.5 2 12.04 2zm0 18.15c-1.48 0-2.93-.4-4.2-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.2 8.2 0 01-1.26-4.38c0-4.54 3.7-8.24 8.25-8.24 4.54 0 8.24 3.7 8.24 8.24 0 4.55-3.7 8.24-8.24 8.24zm4.52-6.17c-.25-.12-1.47-.72-1.69-.81-.23-.08-.39-.12-.56.13-.16.24-.64.8-.78.97-.14.16-.29.18-.54.06-.25-.12-1.05-.39-1.99-1.23-.74-.66-1.23-1.47-1.38-1.72-.14-.25-.02-.38.11-.5.11-.11.25-.29.37-.43.13-.15.17-.25.25-.42.08-.16.04-.31-.02-.43-.06-.12-.56-1.34-.76-1.84-.2-.48-.41-.42-.56-.43h-.48c-.17 0-.43.06-.66.31-.22.25-.86.85-.86 2.07 0 1.22.89 2.4 1.01 2.56.12.17 1.75 2.67 4.23 3.74.59.26 1.05.41 1.41.52.59.19 1.13.16 1.56.1.48-.07 1.47-.6 1.67-1.18.21-.58.21-1.07.15-1.18-.06-.1-.23-.16-.48-.28z"/></svg> WhatsApp</a>
+</div>
+
+<script src="js/config.js"></script>
+<script src="js/i18n.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>

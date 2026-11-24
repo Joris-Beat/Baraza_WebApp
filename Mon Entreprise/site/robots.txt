@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://baraza-all-services.netlify.app/sitemap.xml

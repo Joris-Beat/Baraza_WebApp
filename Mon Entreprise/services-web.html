@@ -1,0 +1,1053 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="UTF-8">
+        <script>document.documentElement.classList.add('js');</script>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#070d1a">
+        <title>Création de sites web & logiciels sur mesure — Joris Beat</title>
+        <meta name="description" content="Sites vitrines, boutiques en ligne, applications et logiciels sur mesure. Abonnement mensuel dès 29 €/mois ou projet à prix fixe. Devis gratuit sous 24 h.">
+            <meta property="og:type" content="website">
+    <meta property="og:title" content="Sites web professionnels dès 29 €/mois — Joris Beat">
+    <meta property="og:description" content="Sites vitrines, e-commerce, applications et logiciels sur mesure. Devis gratuit.">
+    <meta property="og:url" content="https://exemple.com/services-web">
+    <link rel="canonical" href="#contenu">
+    <script type="application/ld+json">
+        {"@context":"https://schema.org","@type":"ProfessionalService","name":"Joris Beat","description":"Développement Web & Logiciel","url":"https://exemple.com/services-web","email":"contact@example.com","telephone":"+33 6 00 00 00 00","makesOffer":[{"@type":"Offer","name":"Site web Starter","priceSpecification":{"@type":"UnitPriceSpecification","price":29,"priceCurrency":"EUR","unitText":"MONTH"}},{"@type":"Offer","name":"Site web Business","priceSpecification":{"@type":"UnitPriceSpecification","price":49,"priceCurrency":"EUR","unitText":"MONTH"}},{"@type":"Offer","name":"Site web Business Pro","priceSpecification":{"@type":"UnitPriceSpecification","price":89,"priceCurrency":"EUR","unitText":"MONTH"}},{"@type":"Offer","name":"Site web E-commerce","priceSpecification":{"@type":"UnitPriceSpecification","price":129,"priceCurrency":"EUR","unitText":"MONTH"}}]}
+    </script>
+        <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 64 64%22><rect width=%2264%22 height=%2264%22 rx=%2216%22 fill=%22%231570ff%22/><text x=%2232%22 y=%2243%22 font-family=%22Arial%22 font-weight=%22700%22 font-size=%2230%22 text-anchor=%22middle%22 fill=%22white%22>JB</text></svg>">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+                
+                    
+<style>
+/* ==========================================================================
+   Page Services web — thème sombre bleu
+   ========================================================================== */
+:root {
+    --bg: #070d1a;
+    --bg-alt: #0b1426;
+    --surface: #111c33;
+    --surface-2: #16233f;
+    --border: #22314f;
+    --text: #f1f5fb;
+    --muted: #93a3c0;
+    --primary: #1570ff;
+    --primary-600: #0b5be0;
+    --primary-soft: rgba(21, 112, 255, .14);
+    --accent: #3d8bff;
+    --whatsapp: #128c4a;
+    --success: #22c55e;
+    --danger: #f87171;
+    --radius: 22px;
+    --radius-sm: 12px;
+    --shadow: 0 20px 50px -20px rgba(0, 0, 0, .6);
+    --container: 1180px;
+    --header-h: 72px;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+html { scroll-behavior: smooth; scroll-padding-top: calc(var(--header-h) + 16px); -webkit-text-size-adjust: 100%; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } *, *::before, *::after { animation: none !important; transition: none !important; } }
+
+body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+    font-size: 16px;
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+}
+img, svg { display: block; max-width: 100%; }
+a { color: inherit; text-decoration: none; }
+h1, h2, h3 { margin: 0; line-height: 1.15; letter-spacing: -.02em; font-weight: 700; }
+p { margin: 0; }
+ul, ol { margin: 0; padding: 0; list-style: none; }
+:focus-visible { outline: 3px solid var(--accent); outline-offset: 3px; border-radius: 6px; }
+
+.container { width: 100%; max-width: var(--container); margin: 0 auto; padding: 0 20px; }
+.container--narrow { max-width: 860px; }
+.accent { color: var(--primary); background: linear-gradient(90deg, #1570ff, #4ea1ff); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; }
+.icon { flex-shrink: 0; }
+
+.skip-link { position: absolute; left: 16px; top: -60px; z-index: 100; background: var(--primary); color: #fff; padding: 10px 16px; border-radius: 8px; }
+.skip-link:focus { top: 12px; }
+
+/* ---------- Boutons ---------- */
+.btn {
+    display: inline-flex; align-items: center; justify-content: center; gap: 10px;
+    min-height: 48px; padding: 12px 24px;
+    border-radius: 14px; border: 1.5px solid transparent;
+    font: inherit; font-weight: 600; font-size: 15px; letter-spacing: .01em;
+    cursor: pointer; transition: transform .15s ease, background-color .2s, border-color .2s, box-shadow .2s;
+    text-align: center;
+}
+.btn:hover { transform: translateY(-2px); }
+.btn:active { transform: translateY(0); }
+.btn--primary { background: var(--primary); color: #fff; box-shadow: 0 10px 30px -10px rgba(21, 112, 255, .8); }
+.btn--primary:hover { background: var(--primary-600); }
+.btn--outline { border-color: var(--primary); color: #fff; background: transparent; }
+.btn--outline:hover { background: var(--primary-soft); }
+.btn--ghost { border-color: rgba(61, 139, 255, .55); color: #fff; background: rgba(255, 255, 255, .02); }
+.btn--ghost:hover { background: var(--primary-soft); }
+.btn--whatsapp { background: var(--whatsapp); color: #fff; }
+.btn--whatsapp:hover { background: #0f7a40; }
+.btn--lg { min-height: 58px; padding: 16px 30px; font-size: 17px; border-radius: 18px; }
+.btn--sm { min-height: 42px; padding: 9px 18px; font-size: 14px; border-radius: 12px; }
+.btn--block { width: 100%; }
+
+.icon-btn {
+    display: inline-grid; place-items: center; width: 48px; height: 48px;
+    background: var(--surface); color: var(--text); border: 1px solid var(--border); border-radius: 14px; cursor: pointer;
+}
+
+/* ---------- En-tête ---------- */
+.site-header {
+    position: sticky; top: 0; z-index: 50;
+    background: rgba(7, 13, 26, .86); backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px);
+    border-bottom: 1px solid var(--border);
+}
+.site-header__inner { display: flex; align-items: center; justify-content: space-between; gap: 20px; height: var(--header-h); }
+.logo { display: inline-flex; align-items: center; gap: 12px; }
+.logo__mark {
+    display: grid; place-items: center; width: 42px; height: 42px; border-radius: 12px;
+    background: linear-gradient(145deg, #1570ff, #0a46b8); color: #fff; box-shadow: 0 0 0 4px rgba(21, 112, 255, .18);
+}
+.logo__text { display: flex; flex-direction: column; line-height: 1.15; }
+.logo__text strong { font-size: 18px; letter-spacing: .02em; }
+.logo__text small { color: var(--accent); font-size: 12px; font-weight: 500; }
+
+.main-nav { display: flex; align-items: center; gap: 28px; font-weight: 500; font-size: 15px; }
+.main-nav a:not(.btn) { color: var(--muted); transition: color .2s; }
+.main-nav a:not(.btn):hover { color: var(--text); }
+.nav-toggle { display: none; }
+.nav-toggle__close { display: none; }
+
+@media (max-width: 900px) {
+    .nav-toggle { display: inline-grid; }
+    .main-nav {
+        position: fixed; inset: var(--header-h) 0 auto 0;
+        flex-direction: column; align-items: stretch; gap: 4px; padding: 16px 20px 24px;
+        background: var(--bg); border-bottom: 1px solid var(--border);
+        transform: translateY(-12px); opacity: 0; visibility: hidden; transition: .2s ease;
+    }
+    .main-nav a:not(.btn) { padding: 14px 4px; font-size: 17px; border-bottom: 1px solid var(--border); color: var(--text); }
+    .main-nav .btn { margin-top: 14px; min-height: 52px; }
+    .site-header.is-open .main-nav { transform: none; opacity: 1; visibility: visible; }
+    .site-header.is-open .nav-toggle__open { display: none; }
+    .site-header.is-open .nav-toggle__close { display: block; }
+    .logo__text small { display: none; }
+}
+
+/* ---------- Fil d'Ariane ---------- */
+.breadcrumb { background: #0c1830; border-bottom: 1px solid var(--border); font-size: 14px; }
+.breadcrumb ol { display: flex; flex-wrap: wrap; gap: 8px; padding: 14px 0; }
+.breadcrumb li { color: var(--muted); }
+.breadcrumb li + li::before { content: '/'; margin-right: 8px; opacity: .5; }
+.breadcrumb a:hover { color: var(--text); }
+.breadcrumb [aria-current] { color: var(--text); }
+
+/* ---------- Typo de section ---------- */
+.eyebrow {
+    display: inline-flex; align-items: center; gap: 16px; margin-bottom: 20px;
+    color: var(--primary); font-size: 13px; font-weight: 600; letter-spacing: .28em; text-transform: uppercase;
+}
+.eyebrow::before { content: ''; width: 44px; height: 2px; background: var(--primary); }
+.section { padding: 96px 0; }
+.section--alt { background: var(--bg-alt); }
+.section-head { max-width: 760px; margin-bottom: 56px; }
+.section-head--center { margin-inline: auto; text-align: center; }
+.section-head h2 { font-size: clamp(32px, 4.6vw, 50px); margin-bottom: 20px; }
+.section-head > p:not(.eyebrow) { color: var(--muted); font-size: 18px; line-height: 1.8; }
+
+/* ---------- Hero ---------- */
+.hero { padding: 80px 0 56px; background: radial-gradient(900px 500px at 85% 20%, rgba(21, 112, 255, .18), transparent 60%), var(--bg); }
+.hero__grid { display: grid; grid-template-columns: 1.1fr .9fr; gap: 56px; align-items: center; }
+.hero h1 { font-size: clamp(40px, 6.4vw, 68px); margin-bottom: 24px; }
+.hero .lead { color: var(--muted); font-size: clamp(17px, 1.6vw, 20px); line-height: 1.8; max-width: 620px; }
+.hero__actions { display: flex; flex-wrap: wrap; gap: 14px; margin-top: 36px; }
+.hero__actions--center { justify-content: center; }
+.hero__proof { display: flex; flex-wrap: wrap; gap: 32px; margin-top: 40px; }
+.hero__proof li { display: flex; flex-direction: column; }
+.hero__proof strong { font-size: 22px; }
+.hero__proof span { color: var(--muted); font-size: 14px; }
+
+.hero__visual {
+    border-radius: 36px; border: 1px solid var(--border); background: linear-gradient(160deg, #18243f, #0f1a30);
+    aspect-ratio: 1 / 1; display: grid; place-items: center; box-shadow: var(--shadow); overflow: hidden;
+}
+.orbit { position: relative; width: 82%; aspect-ratio: 1; }
+.orbit__ring { position: absolute; border-radius: 50%; }
+.orbit__ring--outer { inset: 0; border: 1.5px dashed rgba(147, 163, 192, .35); animation: spin 60s linear infinite; }
+.orbit__ring--inner { inset: 20%; border: 1px solid rgba(21, 112, 255, .4); background: radial-gradient(circle, rgba(21, 112, 255, .3), transparent 70%); }
+.orbit__core {
+    position: absolute; inset: 34%; display: grid; place-items: center; border-radius: 28%;
+    background: linear-gradient(160deg, #1d7bff, #0a4fcc); color: #fff; box-shadow: 0 25px 60px -10px rgba(21, 112, 255, .7);
+    animation: float 6s ease-in-out infinite;
+}
+.orbit__node {
+    position: absolute; width: 19%; aspect-ratio: 1; display: grid; place-items: center;
+    background: #0b1426; color: var(--primary); border: 1px solid var(--border); border-radius: 28%; box-shadow: var(--shadow);
+}
+.orbit__node--top { top: -2%; left: 40.5%; }
+.orbit__node--bottom { bottom: -2%; left: 40.5%; }
+.orbit__node--left { left: -2%; top: 40.5%; }
+.orbit__node--right { right: -2%; top: 40.5%; }
+@keyframes spin { to { transform: rotate(360deg); } }
+@keyframes float { 50% { transform: translateY(-8px); } }
+
+.feature-strip {
+    display: grid; grid-template-columns: repeat(4, 1fr); gap: 1px; margin-top: 64px;
+    background: var(--border); border: 1px solid var(--border); border-radius: var(--radius); overflow: hidden;
+}
+.feature-strip li { display: flex; align-items: center; gap: 14px; padding: 22px 24px; background: var(--surface); font-weight: 500; }
+.feature-strip .icon { color: var(--primary); }
+
+/* ---------- Cartes ---------- */
+.card-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+.card {
+    padding: 36px 32px; border-radius: var(--radius); background: var(--surface); border: 1px solid var(--border);
+    transition: transform .25s ease, border-color .25s, box-shadow .25s;
+}
+.card:hover { transform: translateY(-4px); border-color: rgba(21, 112, 255, .55); box-shadow: var(--shadow); }
+.card__icon {
+    display: grid; place-items: center; width: 68px; height: 68px; margin-bottom: 28px;
+    border-radius: 20px; background: var(--primary-soft); color: var(--primary);
+}
+.card h3 { font-size: 22px; margin-bottom: 14px; }
+.card p { color: var(--muted); line-height: 1.75; }
+
+/* ---------- Tarifs ---------- */
+.tabs { display: inline-flex; gap: 8px; padding: 6px; border-radius: 18px; background: var(--surface); border: 1px solid var(--border); margin-bottom: 28px; }
+.tabs__btn {
+    min-height: 50px; padding: 12px 22px; border-radius: 13px; border: 0; background: transparent; color: var(--muted);
+    font: inherit; font-weight: 600; cursor: pointer; transition: .2s;
+}
+.tabs__btn:hover { color: var(--text); }
+.tabs__btn.is-active { background: var(--primary); color: #fff; box-shadow: 0 10px 25px -10px rgba(21, 112, 255, .9); }
+.panel-intro { display: flex; align-items: center; gap: 10px; color: var(--muted); margin-bottom: 28px; }
+.panel-intro .icon { color: var(--success); }
+
+.pricing-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; align-items: stretch; }
+.price-card {
+    position: relative; display: flex; flex-direction: column; padding: 34px 28px;
+    border-radius: var(--radius); background: linear-gradient(180deg, #13213d, #0f1a31); border: 1px solid var(--border);
+}
+.price-card--popular { border: 2px solid var(--primary); background: linear-gradient(180deg, #13306a, #0f1d3a); box-shadow: 0 30px 60px -25px rgba(21, 112, 255, .6); }
+.badge {
+    position: absolute; top: -14px; left: 50%; transform: translateX(-50%); white-space: nowrap;
+    display: inline-flex; align-items: center; gap: 6px; padding: 6px 14px; border-radius: 999px;
+    background: linear-gradient(90deg, #ff9f43, #ff7a18); color: #fff; font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: .06em;
+}
+.price-card__kicker { color: var(--accent); font-size: 12px; letter-spacing: .2em; text-transform: uppercase; font-weight: 600; margin-bottom: 14px; }
+.price-card h3 { font-size: 26px; }
+.price-card__tagline { color: var(--muted); font-size: 14px; margin-top: 6px; min-height: 44px; }
+.price { display: flex; align-items: baseline; gap: 4px; margin-top: 18px; }
+.price__amount { white-space: nowrap; font-size: 44px; font-weight: 800; letter-spacing: -.03em; }
+.price__unit { color: var(--muted); font-size: 16px; }
+.price__from { color: var(--muted); font-size: 14px; margin-right: 4px; }
+.price--sm .price__amount { font-size: 26px; }
+.price-card__setup { color: var(--accent); font-weight: 500; font-size: 14px; margin: 6px 0 24px; }
+.checklist { display: grid; gap: 12px; margin-bottom: 30px; flex: 1; }
+.checklist li { display: flex; gap: 10px; align-items: flex-start; font-size: 15px; }
+.checklist .icon { color: var(--accent); margin-top: 3px; }
+
+.oneoff-list { display: grid; gap: 14px; }
+.oneoff {
+    display: grid; grid-template-columns: auto 1fr auto auto; align-items: center; gap: 20px;
+    padding: 20px 24px; border-radius: 18px; background: var(--surface); border: 1px solid var(--border); transition: border-color .2s;
+}
+.oneoff:hover { border-color: rgba(21, 112, 255, .55); }
+.oneoff__icon { display: grid; place-items: center; width: 52px; height: 52px; border-radius: 15px; background: var(--primary-soft); color: var(--primary); }
+.oneoff__body { display: flex; flex-direction: column; }
+.oneoff__body strong { font-size: 18px; }
+.oneoff__body small { color: var(--muted); font-size: 14px; }
+.oneoff__price { font-size: 22px; font-weight: 800; padding: 6px 16px; border-radius: 999px; background: #0a2c66; color: #fff; white-space: nowrap; }
+
+.guarantees { display: flex; flex-wrap: wrap; justify-content: center; gap: 12px 32px; margin-top: 48px; padding-top: 32px; border-top: 1px solid var(--border); }
+.guarantees li { display: flex; align-items: center; gap: 8px; font-weight: 500; }
+.guarantees .icon { color: #fff; background: var(--primary); border-radius: 50%; padding: 3px; width: 22px; height: 22px; }
+
+/* ---------- Applications ---------- */
+.apps-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+.app-card { display: flex; flex-direction: column; padding: 24px; border-radius: var(--radius); background: var(--surface); border: 1px solid var(--border); transition: transform .25s, border-color .25s; }
+.app-card:hover { transform: translateY(-4px); border-color: rgba(21, 112, 255, .55); }
+.app-card__preview {
+    display: grid; gap: 10px; padding: 18px; margin-bottom: 24px; border-radius: 16px; aspect-ratio: 16 / 9;
+    background: linear-gradient(160deg, #1a2b4d, #0d1830); border: 1px solid var(--border); align-content: start;
+}
+.app-card__dots { display: flex; gap: 6px; }
+.app-card__dots i { width: 8px; height: 8px; border-radius: 50%; background: #2c3e63; }
+.app-card__bar { height: 10px; width: 70%; border-radius: 6px; background: #24365c; }
+.app-card__bar--short { width: 40%; }
+.app-card__chart { display: flex; align-items: flex-end; gap: 8px; height: 64px; margin-top: 4px; }
+.app-card__chart i { flex: 1; border-radius: 6px 6px 2px 2px; background: linear-gradient(180deg, #3d8bff, #1570ff); opacity: .85; }
+.app-card__category { color: var(--accent); font-size: 13px; font-weight: 600; margin-bottom: 8px; }
+.app-card h3 { font-size: 22px; margin-bottom: 10px; }
+.app-card > p:not(.app-card__category) { color: var(--muted); }
+.tags { display: flex; flex-wrap: wrap; gap: 8px; margin: 18px 0 24px; }
+.tags li { padding: 5px 12px; border-radius: 999px; font-size: 13px; background: var(--primary-soft); color: #cfe0ff; }
+.app-card__footer { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-top: auto; padding-top: 18px; border-top: 1px solid var(--border); }
+.app-card__footer .price { margin: 0; }
+
+/* ---------- Étapes ---------- */
+.steps { display: grid; grid-template-columns: repeat(5, 1fr); gap: 20px; counter-reset: step; }
+.step { position: relative; padding: 28px 24px; border-radius: var(--radius); background: var(--surface); border: 1px solid var(--border); }
+.step__num { display: inline-block; font-size: 15px; font-weight: 800; color: var(--primary); padding: 6px 12px; border-radius: 10px; background: var(--primary-soft); margin-bottom: 18px; }
+.step h3 { font-size: 19px; margin-bottom: 10px; }
+.step p { color: var(--muted); font-size: 15px; }
+
+/* ---------- FAQ ---------- */
+.faq { display: grid; gap: 14px; }
+.faq__item { border-radius: 18px; background: var(--surface); border: 1px solid var(--border); overflow: hidden; }
+.faq__item[open] { border-color: rgba(21, 112, 255, .5); }
+.faq__item summary {
+    display: flex; justify-content: space-between; align-items: center; gap: 16px;
+    padding: 22px 26px; cursor: pointer; font-weight: 600; font-size: 17px; list-style: none;
+}
+.faq__item summary::-webkit-details-marker { display: none; }
+.faq__icon { display: grid; place-items: center; width: 34px; height: 34px; border-radius: 10px; background: var(--primary-soft); color: var(--primary); transition: transform .25s; flex-shrink: 0; }
+.faq__item[open] .faq__icon { transform: rotate(45deg); }
+.faq__item p { padding: 0 26px 24px; color: var(--muted); line-height: 1.8; }
+
+/* ---------- Devis ---------- */
+.section--cta { background: radial-gradient(700px 400px at 10% 20%, rgba(21, 112, 255, .16), transparent 60%), var(--bg-alt); }
+.quote { display: grid; grid-template-columns: .85fr 1.15fr; gap: 56px; align-items: start; }
+.quote__intro h2 { font-size: clamp(32px, 4.4vw, 48px); margin-bottom: 20px; }
+.quote__intro > p:not(.eyebrow) { color: var(--muted); font-size: 18px; line-height: 1.8; }
+.contact-list { display: grid; gap: 14px; margin-top: 32px; }
+.contact-list a, .contact-list__static {
+    display: flex; align-items: center; gap: 16px; padding: 16px 20px; border-radius: 16px;
+    background: var(--surface); border: 1px solid var(--border); transition: border-color .2s; word-break: break-word;
+}
+.contact-list a:hover { border-color: var(--primary); }
+.contact-list .icon { color: var(--primary); }
+.contact-list a > span, .contact-list__static > span { display: flex; flex-direction: column; font-weight: 600; }
+.contact-list small { color: var(--muted); font-weight: 400; font-size: 13px; }
+
+.quote__form { padding: 36px; border-radius: 28px; background: var(--surface); border: 1px solid var(--border); box-shadow: var(--shadow); }
+.form { display: grid; gap: 18px; }
+.form__row { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+.field { display: grid; gap: 8px; align-content: start; }
+.field label { font-weight: 600; font-size: 14px; }
+.field__optional { color: var(--muted); font-weight: 400; }
+.field input:not([type=checkbox]), .field select, .field textarea {
+    width: 100%; min-height: 50px; padding: 12px 16px; border-radius: 12px;
+    background: #0b1528; color: var(--text); border: 1.5px solid var(--border);
+    font: inherit; font-size: 16px; transition: border-color .2s, box-shadow .2s;
+}
+.field select { appearance: none; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='20' viewBox='0 0 24 24' fill='none' stroke='%2393a3c0' stroke-width='2'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: right 14px center; padding-right: 44px; }
+.field textarea { resize: vertical; min-height: 130px; }
+.field input::placeholder, .field textarea::placeholder { color: #5d6c89; }
+.field input:focus, .field select:focus, .field textarea:focus { outline: none; border-color: var(--primary); box-shadow: 0 0 0 4px var(--primary-soft); }
+.field--error input, .field--error select, .field--error textarea { border-color: var(--danger); }
+.field__errors { color: var(--danger); font-size: 14px; }
+.field--check .check { display: flex; gap: 12px; align-items: flex-start; font-size: 15px; color: var(--muted); cursor: pointer; }
+.field--check input { width: 20px; height: 20px; margin-top: 2px; accent-color: var(--primary); flex-shrink: 0; }
+.hp-field { position: absolute !important; left: -9999px !important; width: 1px; height: 1px; overflow: hidden; }
+.form__note { color: var(--muted); font-size: 13px; text-align: center; }
+.alert { display: flex; gap: 12px; align-items: flex-start; padding: 16px 18px; border-radius: 14px; margin-bottom: 22px; font-weight: 500; }
+.alert--success { background: rgba(34, 197, 94, .12); border: 1px solid rgba(34, 197, 94, .4); color: #bbf7d0; }
+.alert--success .icon { color: var(--success); }
+.alert--error { background: rgba(248, 113, 113, .12); border: 1px solid rgba(248, 113, 113, .4); color: #fecaca; }
+
+/* ---------- CTA final & pied de page ---------- */
+.final-cta { padding: 96px 0; text-align: center; background: linear-gradient(180deg, var(--bg), #0a1d45); }
+.final-cta__inner { max-width: 780px; }
+.final-cta__icon { display: inline-grid; place-items: center; width: 72px; height: 72px; border-radius: 22px; background: var(--primary); margin-bottom: 26px; box-shadow: 0 20px 50px -15px rgba(21, 112, 255, .9); }
+.final-cta h2 { font-size: clamp(32px, 4.6vw, 50px); margin-bottom: 16px; }
+.final-cta p { color: var(--muted); font-size: 18px; }
+
+.site-footer { background: #050a14; border-top: 1px solid var(--border); padding: 64px 0 24px; font-size: 15px; }
+.site-footer__grid { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 40px; }
+.site-footer h3 { font-size: 15px; margin-bottom: 16px; }
+.site-footer ul { display: grid; gap: 10px; color: var(--muted); }
+.site-footer ul a:hover { color: var(--text); }
+.site-footer__about { color: var(--muted); margin-top: 18px; max-width: 380px; }
+.site-footer__bottom { display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; margin-top: 48px; padding-top: 24px; border-top: 1px solid var(--border); color: var(--muted); font-size: 14px; }
+
+/* ---------- WhatsApp flottant & barre mobile ---------- */
+.wa-float {
+    position: fixed; right: 22px; bottom: 22px; z-index: 40; display: grid; place-items: center;
+    width: 62px; height: 62px; border-radius: 50%; background: var(--primary); color: #fff;
+    box-shadow: 0 15px 35px -8px rgba(21, 112, 255, .8); transition: transform .2s;
+}
+.wa-float:hover { transform: scale(1.07); }
+.mobile-bar { display: none; }
+
+/* ---------- Apparition au défilement ---------- */
+.js .reveal { opacity: 0; transform: translateY(24px); transition: opacity .7s ease, transform .7s ease; }
+.js .reveal.is-visible { opacity: 1; transform: none; }
+
+/* ---------- Responsive ---------- */
+@media (max-width: 1100px) {
+    .pricing-grid { grid-template-columns: repeat(2, 1fr); row-gap: 32px; }
+    .steps { grid-template-columns: repeat(3, 1fr); }
+}
+@media (max-width: 900px) {
+    .section { padding: 72px 0; }
+    .hero { padding: 56px 0 40px; }
+    .hero__grid, .quote { grid-template-columns: 1fr; gap: 40px; }
+    .hero__visual { max-width: 520px; width: 100%; margin: 0 auto; }
+    .card-grid, .apps-grid { grid-template-columns: repeat(2, 1fr); }
+    .feature-strip { grid-template-columns: repeat(2, 1fr); }
+    .site-footer__grid { grid-template-columns: 1fr 1fr; }
+    .site-footer__grid > :first-child { grid-column: 1 / -1; }
+}
+@media (max-width: 640px) {
+    body { padding-bottom: 76px; }
+    .container { padding: 0 16px; }
+    .card-grid, .apps-grid, .pricing-grid, .steps, .form__row { grid-template-columns: 1fr; }
+    .card { padding: 30px 26px; }
+    .hero__actions .btn { width: 100%; }
+    .hero__proof { gap: 20px; }
+    .tabs { display: grid; grid-template-columns: 1fr 1fr; width: 100%; }
+    .tabs__btn { padding: 12px 10px; font-size: 14px; }
+    .oneoff { grid-template-columns: 52px 1fr auto; gap: 14px 16px; padding: 18px; }
+    .oneoff__body { grid-column: 2 / -1; }
+    .oneoff__price { grid-column: 1 / 3; justify-self: start; font-size: 18px; }
+    .oneoff .btn { grid-column: 3; }
+    .quote__form { padding: 24px 18px; border-radius: 22px; }
+    .feature-strip li { padding: 18px 16px; font-size: 14px; flex-direction: column; align-items: flex-start; gap: 10px; }
+    .app-card__footer { flex-direction: column; align-items: stretch; }
+    .site-footer__grid { grid-template-columns: 1fr; }
+    .wa-float { bottom: 88px; right: 16px; width: 56px; height: 56px; }
+    .mobile-bar {
+        position: fixed; left: 0; right: 0; bottom: 0; z-index: 45; display: flex; gap: 10px;
+        padding: 12px 16px calc(12px + env(safe-area-inset-bottom));
+        background: rgba(7, 13, 26, .94); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border-top: 1px solid var(--border);
+    }
+    .mobile-bar .btn--whatsapp { width: 56px; padding: 0; flex-shrink: 0; }
+}
+
+</style>
+
+            </head>
+    <body>
+        <a class="skip-link" href="#contenu">Aller au contenu</a>
+
+<header class="site-header" data-controller="nav">
+    <div class="container site-header__inner">
+        <a class="logo" href="#contenu" aria-label="Joris Beat — accueil">
+            <span class="logo__mark"><svg class="icon" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 8h18M9 12l-2 2 2 2M15 12l2 2-2 2M13 11l-2 6"/></svg></span>
+            <span class="logo__text"><strong>Joris Beat</strong><small>Développement Web &amp; Logiciel</small></span>
+        </a>
+        <nav class="main-nav" id="main-nav" data-nav-target="menu" aria-label="Navigation principale">
+            <a href="#services" data-action="nav#close">Services</a>
+            <a href="#tarifs" data-action="nav#close">Tarifs</a>
+            <a href="#applications" data-action="nav#close">Applications</a>
+            <a href="#methode" data-action="nav#close">Méthode</a>
+            <a href="#faq" data-action="nav#close">FAQ</a>
+            <a class="btn btn--primary btn--sm" href="#devis" data-action="nav#close">Devis gratuit</a>
+        </nav>
+        <button class="icon-btn nav-toggle" type="button" aria-controls="main-nav" aria-expanded="false" aria-label="Ouvrir le menu" data-nav-target="button" data-action="nav#toggle">
+            <span class="nav-toggle__open"><svg class="icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M4 7h16M4 12h16M4 17h16"/></svg></span>
+            <span class="nav-toggle__close"><svg class="icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M6 6l12 12M18 6L6 18"/></svg></span>
+        </button>
+    </div>
+</header>
+
+<main id="contenu">
+    <nav class="breadcrumb" aria-label="Fil d’Ariane">
+        <div class="container">
+            <ol>
+                <li><a href="#contenu">Accueil</a></li>
+                <li><a href="#services">Services</a></li>
+                <li aria-current="page">Développement Web & Logiciel</li>
+            </ol>
+        </div>
+    </nav>
+
+        <section class="hero">
+        <div class="container hero__grid">
+            <div class="hero__content reveal" data-controller="reveal">
+                <p class="eyebrow">Développement web & logiciel</p>
+                <h1>Des sites web professionnels pour les <span class="accent">entreprises qui grandissent</span></h1>
+                <p class="lead">Lancez un site professionnel, ouvrez votre boutique en ligne ou simplifiez votre activité avec un logiciel sur mesure. Choisissez un abonnement mensuel tout compris ou un projet à prix fixe, avec un accompagnement de A à Z.</p>
+                <div class="hero__actions">
+                    <a class="btn btn--primary btn--lg" href="#tarifs">Voir les formules <svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+                    <a class="btn btn--ghost btn--lg" href="#devis">Demander un devis gratuit</a>
+                </div>
+                <ul class="hero__proof">
+                    <li><strong>dès 29 €</strong><span>par mois, tout compris</span></li>
+                    <li><strong>24 h</strong><span>pour recevoir votre devis</span></li>
+                    <li><strong>100 %</strong><span>responsive & sécurisé</span></li>
+                </ul>
+            </div>
+
+            <div class="hero__visual reveal" data-controller="reveal" aria-hidden="true">
+                <div class="orbit">
+                    <span class="orbit__ring orbit__ring--outer"></span>
+                    <span class="orbit__ring orbit__ring--inner"></span>
+                    <span class="orbit__node orbit__node--top"><svg class="icon" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 9h18M7 13h6M7 16h4"/></svg></span>
+                    <span class="orbit__node orbit__node--right"><svg class="icon" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 8h14l-1 12H6L5 8z"/><path d="M9 8V6a3 3 0 016 0v2M10 12h4"/></svg></span>
+                    <span class="orbit__node orbit__node--bottom"><svg class="icon" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="3" y="4" width="18" height="12" rx="2"/><path d="M8 20h8M12 16v4"/></svg></span>
+                    <span class="orbit__node orbit__node--left"><svg class="icon" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M3 12h4l3-8 4 16 3-8h4"/></svg></span>
+                    <span class="orbit__core"><svg class="icon" width="56" height="56" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 8h18M9 12l-2 2 2 2M15 12l2 2-2 2M13 11l-2 6"/></svg></span>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <ul class="feature-strip">
+                <li><svg class="icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="3" y="4" width="18" height="12" rx="2"/><path d="M8 20h8M12 16v4"/></svg><span>Design & développement web</span></li>
+                <li><svg class="icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 3l9 5-9 5-9-5 9-5z"/><path d="M3 13l9 5 9-5"/></svg><span>Hébergement sécurisé</span></li>
+                <li><svg class="icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 9h18M7 13h6M7 16h4"/></svg><span>Nom de domaine</span></li>
+                <li><svg class="icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg><span>Support continu</span></li>
+            </ul>
+        </div>
+    </section>
+
+        <section class="section section--alt" aria-labelledby="defis-titre">
+        <div class="container">
+            <header class="section-head section-head--center reveal" data-controller="reveal">
+                <p class="eyebrow">Défis numériques</p>
+                <h2 id="defis-titre">Des outils dépassés freinent la <span class="accent">croissance de votre entreprise</span></h2>
+                <p>Beaucoup d’entreprises perdent des clients à cause d’un site lent, d’outils qui ne communiquent pas, de tâches manuelles et d’une présence en ligne trop faible.</p>
+            </header>
+            <div class="card-grid">
+                                    <article class="card reveal" data-controller="reveal">
+                        <span class="card__icon"><svg class="icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 9h18M7 13h6M7 16h4"/></svg></span>
+                        <h3>Site web dépassé</h3>
+                        <p>Un site ancien, lent ou mal structuré fait perdre la confiance des visiteurs, réduit les demandes de contact et affaiblit votre image.</p>
+                    </article>
+                                    <article class="card reveal" data-controller="reveal">
+                        <span class="card__icon"><svg class="icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M3 12h4l3-8 4 16 3-8h4"/></svg></span>
+                        <h3>Processus manuels</h3>
+                        <p>Les tâches répétitives font perdre du temps, multiplient les erreurs et freinent la croissance de votre activité.</p>
+                    </article>
+                                    <article class="card reveal" data-controller="reveal">
+                        <span class="card__icon"><svg class="icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="3" y="4" width="18" height="12" rx="2"/><path d="M8 20h8M12 16v4"/></svg></span>
+                        <h3>Outils déconnectés</h3>
+                        <p>Quand vos outils ne communiquent pas, vos équipes ressaisissent les données, jonglent avec des tableurs et perdent l’information.</p>
+                    </article>
+                                    <article class="card reveal" data-controller="reveal">
+                        <span class="card__icon"><svg class="icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="7" y="2" width="10" height="20" rx="2"/><path d="M11 18h2"/></svg></span>
+                        <h3>Mauvaise expérience mobile</h3>
+                        <p>Vos clients attendent une expérience rapide et fluide sur ordinateur, tablette et smartphone. Sans cela, ils partent chez un concurrent.</p>
+                    </article>
+                                    <article class="card reveal" data-controller="reveal">
+                        <span class="card__icon"><svg class="icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 3l8 3v6c0 5-3.5 8.5-8 9-4.5-.5-8-4-8-9V6l8-3z"/><path d="M8.5 12l2.5 2.5 4.5-5"/></svg></span>
+                        <h3>Failles de sécurité</h3>
+                        <p>Extensions obsolètes, absence de sauvegardes et mauvaises pratiques exposent votre activité à des risques réels.</p>
+                    </article>
+                                    <article class="card reveal" data-controller="reveal">
+                        <span class="card__icon"><svg class="icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M4 20h16M7 16V9M12 16V5M17 16v-4"/><path d="M10 7l2-2 2 2"/></svg></span>
+                        <h3>Croissance limitée</h3>
+                        <p>Une plateforme doit pouvoir accueillir plus d’utilisateurs, de services, d’intégrations et de contenus au fil de votre développement.</p>
+                    </article>
+                            </div>
+        </div>
+    </section>
+
+        <section class="section" id="services" aria-labelledby="services-titre">
+        <div class="container">
+            <header class="section-head section-head--center reveal" data-controller="reveal">
+                <p class="eyebrow">Services de développement</p>
+                <h2 id="services-titre">Des solutions web & logicielles construites <span class="accent">autour de votre activité</span></h2>
+                <p>Je crée des plateformes qui vous aident à attirer des clients, automatiser vos tâches, gérer vos informations, vendre en ligne et travailler plus efficacement.</p>
+            </header>
+            <div class="card-grid">
+                                    <article class="card card--service reveal" data-controller="reveal">
+                        <span class="card__icon"><svg class="icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 9h18M7 13h6M7 16h4"/></svg></span>
+                        <h3>Sites vitrines professionnels</h3>
+                        <p>Des sites conçus pour inspirer confiance, présenter clairement votre valeur et transformer les visiteurs en demandes de devis.</p>
+                    </article>
+                                    <article class="card card--service reveal" data-controller="reveal">
+                        <span class="card__icon"><svg class="icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 8h14l-1 12H6L5 8z"/><path d="M9 8V6a3 3 0 016 0v2M10 12h4"/></svg></span>
+                        <h3>Boutiques en ligne</h3>
+                        <p>Catalogue produits, panier, paiement en ligne, gestion des commandes et parcours d’achat pensé pour vendre.</p>
+                    </article>
+                                    <article class="card card--service reveal" data-controller="reveal">
+                        <span class="card__icon"><svg class="icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 8h18M9 12l-2 2 2 2M15 12l2 2-2 2M13 11l-2 6"/></svg></span>
+                        <h3>Logiciels sur mesure</h3>
+                        <p>Des outils adaptés à vos processus internes : gestion, reporting, rôles utilisateurs et automatisations.</p>
+                    </article>
+                                    <article class="card card--service reveal" data-controller="reveal">
+                        <span class="card__icon"><svg class="icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="4" y="4" width="16" height="12" rx="1"/><path d="M8 8h5M8 11h8M3 20h18"/></svg></span>
+                        <h3>Portails &amp; espaces clients</h3>
+                        <p>Espaces clients, intranets, tableaux de bord, formulaires de demande et accès sécurisé aux documents.</p>
+                    </article>
+                                    <article class="card card--service reveal" data-controller="reveal">
+                        <span class="card__icon"><svg class="icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="3" y="3" width="8" height="8" rx="1"/><rect x="13" y="13" width="8" height="8" rx="1"/><path d="M11 7h4a2 2 0 012 2v4M13 17H9a2 2 0 01-2-2v-4"/></svg></span>
+                        <h3>Intégrations &amp; API</h3>
+                        <p>Connexion de votre site avec vos outils : paiement, CRM, emailing, bases de données et services tiers.</p>
+                    </article>
+                                    <article class="card card--service reveal" data-controller="reveal">
+                        <span class="card__icon"><svg class="icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="7" y="2" width="10" height="20" rx="2"/><path d="M11 18h2"/></svg></span>
+                        <h3>Design UX / UI responsive</h3>
+                        <p>Des interfaces claires et agréables, pensées d’abord pour le mobile puis adaptées à tous les écrans.</p>
+                    </article>
+                                    <article class="card card--service reveal" data-controller="reveal">
+                        <span class="card__icon"><svg class="icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="3" y="3" width="7" height="7" rx="2"/><rect x="14" y="3" width="7" height="7" rx="2"/><rect x="3" y="14" width="7" height="7" rx="2"/><path d="M17.5 14v7M14 17.5h7"/></svg></span>
+                        <h3>Applications web &amp; mobiles</h3>
+                        <p>Des applications qui résolvent un besoin précis de votre activité et améliorent votre efficacité.</p>
+                    </article>
+                                    <article class="card card--service reveal" data-controller="reveal">
+                        <span class="card__icon"><svg class="icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 3l8 3v6c0 5-3.5 8.5-8 9-4.5-.5-8-4-8-9V6l8-3z"/><path d="M8.5 12l2.5 2.5 4.5-5"/></svg></span>
+                        <h3>Sécurité &amp; maintenance</h3>
+                        <p>Mises à jour, sauvegardes, surveillance, certificat SSL, corrections et améliorations continues.</p>
+                    </article>
+                                    <article class="card card--service reveal" data-controller="reveal">
+                        <span class="card__icon"><svg class="icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M3 12h4l3-8 4 16 3-8h4"/></svg></span>
+                        <h3>Performance &amp; SEO</h3>
+                        <p>Vitesse de chargement, référencement naturel, structure et fiabilité pour être trouvé sur Google.</p>
+                    </article>
+                            </div>
+        </div>
+    </section>
+
+        <section class="section section--alt" id="tarifs" aria-labelledby="tarifs-titre" data-controller="tabs">
+        <div class="container">
+            <header class="section-head reveal" data-controller="reveal">
+                <p class="eyebrow">Formules de création de site</p>
+                <h2 id="tarifs-titre">Construisez votre présence. <span class="accent">Développez-vous en ligne.</span></h2>
+                <p>Choisissez la souplesse d’un abonnement mensuel tout compris ou investissez dans un projet à prix fixe. Des tarifs clairs, un travail professionnel et un vrai suivi.</p>
+            </header>
+
+            <div class="tabs" role="tablist" aria-label="Type de formule">
+                <button class="tabs__btn is-active" type="button" role="tab" id="tab-mensuel" aria-controls="panel-mensuel" aria-selected="true" data-tabs-target="tab" data-action="tabs#select keydown->tabs#keydown">Abonnement mensuel</button>
+                <button class="tabs__btn" type="button" role="tab" id="tab-unique" aria-controls="panel-unique" aria-selected="false" tabindex="-1" data-tabs-target="tab" data-action="tabs#select keydown->tabs#keydown">Paiement unique</button>
+            </div>
+
+                        <div class="tabs__panel" id="panel-mensuel" role="tabpanel" aria-labelledby="tab-mensuel" data-tabs-target="panel">
+                <p class="panel-intro"><svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg> Hébergement, SSL, maintenance et modifications inclus — un moyen économique d’avoir un site pro avec un suivi continu.</p>
+                <div class="pricing-grid">
+                                            <article class="price-card">
+                                                        <p class="price-card__kicker">Abonnement mensuel</p>
+                            <h3>Starter</h3>
+                            <p class="price-card__tagline">Pour démarrer votre présence en ligne.</p>
+                            <p class="price"><span class="price__amount">29 €</span><span class="price__unit">/mois</span></p>
+                            <p class="price-card__setup">+ 149 € de mise en place (une fois)</p>
+                            <ul class="checklist">
+                                <li><svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Jusqu’à 3 pages responsive</li><li><svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Hébergement &amp; certificat SSL</li><li><svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Formulaire de contact &amp; WhatsApp</li><li><svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>SEO de base</li><li><svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>1 modification de contenu / mois</li>                            </ul>
+                            <a class="btn btn--outline btn--block"
+                               href="#devis"
+                               data-controller="offer" data-offer-slug-value="starter" data-action="offer#choose">
+                                Choisir Starter
+                            </a>
+                        </article>
+                                            <article class="price-card price-card--popular">
+                            <span class="badge"><svg class="icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 3l2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 17l-5.4 2.9 1-6.1-4.4-4.3 6.1-.9L12 3z"/></svg> Le plus populaire</span>                            <p class="price-card__kicker">Abonnement mensuel</p>
+                            <h3>Business</h3>
+                            <p class="price-card__tagline">Le meilleur équilibre pour les PME.</p>
+                            <p class="price"><span class="price__amount">49 €</span><span class="price__unit">/mois</span></p>
+                            <p class="price-card__setup">+ 249 € de mise en place (une fois)</p>
+                            <ul class="checklist">
+                                <li><svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Jusqu’à 8 pages</li><li><svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Hébergement &amp; certificat SSL</li><li><svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Formulaires &amp; statistiques de visite</li><li><svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>SEO de base optimisé</li><li><svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>2 modifications de contenu / mois</li>                            </ul>
+                            <a class="btn btn--primary btn--block"
+                               href="#devis"
+                               data-controller="offer" data-offer-slug-value="business" data-action="offer#choose">
+                                Choisir Business
+                            </a>
+                        </article>
+                                            <article class="price-card">
+                                                        <p class="price-card__kicker">Abonnement mensuel</p>
+                            <h3>Business Pro</h3>
+                            <p class="price-card__tagline">Pour les entreprises qui veulent plus de leads.</p>
+                            <p class="price"><span class="price__amount">89 €</span><span class="price__unit">/mois</span></p>
+                            <p class="price-card__setup">+ 390 € de mise en place (une fois)</p>
+                            <ul class="checklist">
+                                <li><svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Jusqu’à 15 pages</li><li><svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Formulaires avancés</li><li><svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>SEO avancé</li><li><svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Rapport mensuel de performance</li><li><svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>4 modifications de contenu / mois</li>                            </ul>
+                            <a class="btn btn--outline btn--block"
+                               href="#devis"
+                               data-controller="offer" data-offer-slug-value="business-pro" data-action="offer#choose">
+                                Choisir Business Pro
+                            </a>
+                        </article>
+                                            <article class="price-card">
+                                                        <p class="price-card__kicker">Abonnement mensuel</p>
+                            <h3>E-commerce</h3>
+                            <p class="price-card__tagline">Vendez en ligne, 24 h / 24.</p>
+                            <p class="price"><span class="price__amount">129 €</span><span class="price__unit">/mois</span></p>
+                            <p class="price-card__setup">+ 590 € de mise en place (une fois)</p>
+                            <ul class="checklist">
+                                <li><svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Boutique en ligne (jusqu’à 30 produits)</li><li><svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Paiement en ligne configuré</li><li><svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Configuration des livraisons</li><li><svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Hébergement géré &amp; sauvegardes</li><li><svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>4 modifications de contenu / mois</li>                            </ul>
+                            <a class="btn btn--outline btn--block"
+                               href="#devis"
+                               data-controller="offer" data-offer-slug-value="ecommerce" data-action="offer#choose">
+                                Choisir E-commerce
+                            </a>
+                        </article>
+                                    </div>
+            </div>
+
+                        <div class="tabs__panel" id="panel-unique" role="tabpanel" aria-labelledby="tab-unique" data-tabs-target="panel" hidden>
+                <p class="panel-intro"><svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg> Vous préférez un projet ponctuel ? Je le construis pour vous, le site vous appartient.</p>
+                <ul class="oneoff-list">
+                                            <li class="oneoff">
+                            <span class="oneoff__icon"><svg class="icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M21 3L3 10.5l7 3 3 7L21 3z"/><path d="M10 13.5L21 3"/></svg></span>
+                            <span class="oneoff__body"><strong>Landing page</strong><small>1 page, idéale pour une campagne publicitaire</small></span>
+                            <span class="oneoff__price">390 €</span>
+                            <a class="btn btn--outline btn--sm" href="#devis"
+                               data-controller="offer" data-offer-slug-value="landing-page" data-action="offer#choose">
+                                Commander
+                            </a>
+                        </li>
+                                            <li class="oneoff">
+                            <span class="oneoff__icon"><svg class="icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 3l9 5-9 5-9-5 9-5z"/><path d="M3 13l9 5 9-5"/></svg></span>
+                            <span class="oneoff__body"><strong>Site vitrine</strong><small>Jusqu’à 5 pages</small></span>
+                            <span class="oneoff__price">890 €</span>
+                            <a class="btn btn--outline btn--sm" href="#devis"
+                               data-controller="offer" data-offer-slug-value="site-vitrine" data-action="offer#choose">
+                                Commander
+                            </a>
+                        </li>
+                                            <li class="oneoff">
+                            <span class="oneoff__icon"><svg class="icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M9 7V5a2 2 0 012-2h2a2 2 0 012 2v2M3 12h18M12 11v2"/></svg></span>
+                            <span class="oneoff__body"><strong>Site entreprise</strong><small>Jusqu’à 10 pages</small></span>
+                            <span class="oneoff__price">1 490 €</span>
+                            <a class="btn btn--outline btn--sm" href="#devis"
+                               data-controller="offer" data-offer-slug-value="site-entreprise" data-action="offer#choose">
+                                Commander
+                            </a>
+                        </li>
+                                            <li class="oneoff">
+                            <span class="oneoff__icon"><svg class="icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M3 4h2l2.5 11h11L21 7H6.5"/><circle cx="9" cy="19" r="1.5"/><circle cx="17" cy="19" r="1.5"/></svg></span>
+                            <span class="oneoff__body"><strong>Site e-commerce</strong><small>Jusqu’à 30 produits</small></span>
+                            <span class="oneoff__price">2 490 €</span>
+                            <a class="btn btn--outline btn--sm" href="#devis"
+                               data-controller="offer" data-offer-slug-value="site-ecommerce" data-action="offer#choose">
+                                Commander
+                            </a>
+                        </li>
+                                            <li class="oneoff">
+                            <span class="oneoff__icon"><svg class="icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 8h18M9 12l-2 2 2 2M15 12l2 2-2 2M13 11l-2 6"/></svg></span>
+                            <span class="oneoff__body"><strong>Site sur mesure / application web</strong><small>Fonctionnalités spécifiques, logiciel métier</small></span>
+                            <span class="oneoff__price">Sur devis</span>
+                            <a class="btn btn--outline btn--sm" href="#devis"
+                               data-controller="offer" data-offer-slug-value="sur-mesure" data-action="offer#choose">
+                                Demander un devis
+                            </a>
+                        </li>
+                                    </ul>
+            </div>
+
+            <ul class="guarantees">
+                <li><svg class="icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Adapté au mobile</li><li><svg class="icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Sécurité SSL</li><li><svg class="icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Hébergement fiable</li><li><svg class="icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Solutions évolutives</li><li><svg class="icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Support dédié</li>            </ul>
+        </div>
+    </section>
+
+        <section class="section" id="applications" aria-labelledby="apps-titre">
+        <div class="container">
+            <header class="section-head section-head--center reveal" data-controller="reveal">
+                <p class="eyebrow">Applications prêtes à l’emploi</p>
+                <h2 id="apps-titre">Des applications pour <span class="accent">gagner du temps dès aujourd’hui</span></h2>
+                <p>Pas besoin de partir de zéro : ces applications sont déjà développées, je les installe et les adapte à votre entreprise en quelques jours.</p>
+            </header>
+            <div class="apps-grid">
+                                    <article class="app-card reveal" data-controller="reveal">
+                        <div class="app-card__preview" aria-hidden="true">
+                            <span class="app-card__dots"><i></i><i></i><i></i></span>
+                            <span class="app-card__bar"></span>
+                            <span class="app-card__bar app-card__bar--short"></span>
+                            <span class="app-card__chart"><i style="height: 40%"></i><i style="height: 65%"></i><i style="height: 50%"></i><i style="height: 80%"></i><i style="height: 60%"></i><i style="height: 90%"></i></span>
+                        </div>
+                        <p class="app-card__category">Salons, cabinets, restaurants</p>
+                        <h3>Réservation en ligne</h3>
+                        <p>Vos clients réservent un créneau 24 h / 24, reçoivent des rappels automatiques et vous gérez votre agenda depuis un tableau de bord.</p>
+                        <ul class="tags"><li>Agenda &amp; créneaux</li><li>Rappels email / SMS</li><li>Paiement d’acompte</li></ul>
+                        <div class="app-card__footer">
+                            <p class="price price--sm"><span class="price__from">dès</span> <span class="price__amount">19 €</span><span class="price__unit">/mois</span></p>
+                            <a class="btn btn--primary btn--sm" href="#devis"
+                               data-controller="offer" data-offer-slug-value="app-reservation" data-action="offer#choose">Demander une démo</a>
+                        </div>
+                    </article>
+                                    <article class="app-card reveal" data-controller="reveal">
+                        <div class="app-card__preview" aria-hidden="true">
+                            <span class="app-card__dots"><i></i><i></i><i></i></span>
+                            <span class="app-card__bar"></span>
+                            <span class="app-card__bar app-card__bar--short"></span>
+                            <span class="app-card__chart"><i style="height: 40%"></i><i style="height: 65%"></i><i style="height: 50%"></i><i style="height: 80%"></i><i style="height: 60%"></i><i style="height: 90%"></i></span>
+                        </div>
+                        <p class="app-card__category">Artisans, indépendants, TPE</p>
+                        <h3>Devis &amp; facturation</h3>
+                        <p>Créez vos devis et factures en quelques clics, suivez les paiements et exportez votre comptabilité.</p>
+                        <ul class="tags"><li>Devis → facture</li><li>Suivi des impayés</li><li>Export comptable</li></ul>
+                        <div class="app-card__footer">
+                            <p class="price price--sm"><span class="price__from">dès</span> <span class="price__amount">15 €</span><span class="price__unit">/mois</span></p>
+                            <a class="btn btn--primary btn--sm" href="#devis"
+                               data-controller="offer" data-offer-slug-value="app-facturation" data-action="offer#choose">Demander une démo</a>
+                        </div>
+                    </article>
+                                    <article class="app-card reveal" data-controller="reveal">
+                        <div class="app-card__preview" aria-hidden="true">
+                            <span class="app-card__dots"><i></i><i></i><i></i></span>
+                            <span class="app-card__bar"></span>
+                            <span class="app-card__bar app-card__bar--short"></span>
+                            <span class="app-card__chart"><i style="height: 40%"></i><i style="height: 65%"></i><i style="height: 50%"></i><i style="height: 80%"></i><i style="height: 60%"></i><i style="height: 90%"></i></span>
+                        </div>
+                        <p class="app-card__category">Commerces, grossistes</p>
+                        <h3>Gestion de stock &amp; ventes</h3>
+                        <p>Suivez vos entrées, sorties et ventes en temps réel, avec alertes de rupture et statistiques claires.</p>
+                        <ul class="tags"><li>Inventaire en temps réel</li><li>Alertes de rupture</li><li>Rapports de ventes</li></ul>
+                        <div class="app-card__footer">
+                            <p class="price price--sm"><span class="price__from">dès</span> <span class="price__amount">25 €</span><span class="price__unit">/mois</span></p>
+                            <a class="btn btn--primary btn--sm" href="#devis"
+                               data-controller="offer" data-offer-slug-value="app-stock" data-action="offer#choose">Demander une démo</a>
+                        </div>
+                    </article>
+                            </div>
+        </div>
+    </section>
+
+        <section class="section section--alt" id="methode" aria-labelledby="methode-titre">
+        <div class="container">
+            <header class="section-head section-head--center reveal" data-controller="reveal">
+                <p class="eyebrow">Comment ça marche</p>
+                <h2 id="methode-titre">Un processus simple, <span class="accent">sans mauvaise surprise</span></h2>
+            </header>
+            <ol class="steps">
+                                    <li class="step reveal" data-controller="reveal">
+                        <span class="step__num">01</span>
+                        <h3>Échange découverte</h3>
+                        <p>Un appel gratuit de 30 minutes pour comprendre votre activité, vos objectifs et votre budget.</p>
+                    </li>
+                                    <li class="step reveal" data-controller="reveal">
+                        <span class="step__num">02</span>
+                        <h3>Proposition &amp; devis</h3>
+                        <p>Vous recevez une proposition claire : pages, fonctionnalités, délais et prix fixe. Aucune surprise.</p>
+                    </li>
+                                    <li class="step reveal" data-controller="reveal">
+                        <span class="step__num">03</span>
+                        <h3>Design &amp; développement</h3>
+                        <p>Je conçois la maquette, vous validez, puis je développe avec des points d’avancement réguliers.</p>
+                    </li>
+                                    <li class="step reveal" data-controller="reveal">
+                        <span class="step__num">04</span>
+                        <h3>Mise en ligne</h3>
+                        <p>Tests sur tous les écrans, configuration du domaine, du SSL et du référencement, puis lancement.</p>
+                    </li>
+                                    <li class="step reveal" data-controller="reveal">
+                        <span class="step__num">05</span>
+                        <h3>Suivi &amp; évolution</h3>
+                        <p>Maintenance, sauvegardes, mises à jour et nouvelles fonctionnalités selon vos besoins.</p>
+                    </li>
+                            </ol>
+        </div>
+    </section>
+
+        <section class="section" id="faq" aria-labelledby="faq-titre">
+        <div class="container container--narrow">
+            <header class="section-head section-head--center reveal" data-controller="reveal">
+                <p class="eyebrow">Questions fréquentes</p>
+                <h2 id="faq-titre">Vous avez des <span class="accent">questions ?</span></h2>
+            </header>
+            <div class="faq">
+                                    <details class="faq__item" open>
+                        <summary>Quelle est la différence entre l’abonnement mensuel et le paiement unique ?<span class="faq__icon"><svg class="icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 5v14M5 12h14"/></svg></span></summary>
+                        <p>Avec l’abonnement, vous payez des frais de mise en place réduits puis un montant mensuel qui inclut l’hébergement, le SSL, la maintenance et des modifications de contenu. Avec le paiement unique, le site vous appartient après paiement ; l’hébergement et la maintenance peuvent être ajoutés séparément.</p>
+                    </details>
+                                    <details class="faq__item">
+                        <summary>Combien de temps faut-il pour créer mon site ?<span class="faq__icon"><svg class="icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 5v14M5 12h14"/></svg></span></summary>
+                        <p>Comptez en général 5 à 10 jours ouvrés pour une landing page ou un site vitrine, et 2 à 6 semaines pour une boutique en ligne ou une application sur mesure, selon la rapidité de réception des contenus.</p>
+                    </details>
+                                    <details class="faq__item">
+                        <summary>Y a-t-il un engagement de durée pour l’abonnement ?<span class="faq__icon"><svg class="icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 5v14M5 12h14"/></svg></span></summary>
+                        <p>L’abonnement est sans engagement au-delà des 12 premiers mois. Vous pouvez ensuite arrêter à tout moment avec un préavis d’un mois.</p>
+                    </details>
+                                    <details class="faq__item">
+                        <summary>Le nom de domaine est-il inclus ?<span class="faq__icon"><svg class="icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 5v14M5 12h14"/></svg></span></summary>
+                        <p>Je m’occupe de l’enregistrement ou du transfert de votre nom de domaine. Le coût du domaine lui-même (environ 10 à 20 par an) est facturé à prix coûtant.</p>
+                    </details>
+                                    <details class="faq__item">
+                        <summary>Pourrai-je modifier mon site moi-même ?<span class="faq__icon"><svg class="icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 5v14M5 12h14"/></svg></span></summary>
+                        <p>Oui. Selon la formule, vous recevez un accès d’administration simple et une courte formation. Vous pouvez aussi me confier les modifications.</p>
+                    </details>
+                                    <details class="faq__item">
+                        <summary>Comment se passe le paiement ?<span class="faq__icon"><svg class="icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 5v14M5 12h14"/></svg></span></summary>
+                        <p>Pour un projet unique : 50 % à la commande et 50 % à la mise en ligne. Pour un abonnement : les frais de mise en place à la commande, puis un prélèvement mensuel.</p>
+                    </details>
+                            </div>
+        </div>
+    </section>
+
+        <section class="section section--cta" id="devis" aria-labelledby="devis-titre">
+        <div class="container quote">
+            <div class="quote__intro">
+                <p class="eyebrow">Devis gratuit</p>
+                <h2 id="devis-titre">Parlons de <span class="accent">votre projet</span></h2>
+                <p>Remplissez le formulaire : je vous réponds sous 24 h ouvrées avec une proposition claire et un prix fixe. Vous préférez discuter directement ? Écrivez-moi sur WhatsApp.</p>
+                <ul class="contact-list">
+                    <li><a href="https://wa.me/33600000000?text=Bonjour%20Joris%20Beat%2C%20je%20souhaite%20des%20informations%20sur%20vos%20services%20web." target="_blank" rel="noopener"><svg class="icon" width="22" height="22" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38a9.9 9.9 0 004.74 1.21c5.46 0 9.91-4.45 9.91-9.91C21.95 6.45 17.5 2 12.04 2zm0 18.15c-1.48 0-2.93-.4-4.2-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.2 8.2 0 01-1.26-4.38c0-4.54 3.7-8.24 8.25-8.24 4.54 0 8.24 3.7 8.24 8.24 0 4.55-3.7 8.24-8.24 8.24zm4.52-6.17c-.25-.12-1.47-.72-1.69-.81-.23-.08-.39-.12-.56.13-.16.24-.64.8-.78.97-.14.16-.29.18-.54.06-.25-.12-1.05-.39-1.99-1.23-.74-.66-1.23-1.47-1.38-1.72-.14-.25-.02-.38.11-.5.11-.11.25-.29.37-.43.13-.15.17-.25.25-.42.08-.16.04-.31-.02-.43-.06-.12-.56-1.34-.76-1.84-.2-.48-.41-.42-.56-.43h-.48c-.17 0-.43.06-.66.31-.22.25-.86.85-.86 2.07 0 1.22.89 2.4 1.01 2.56.12.17 1.75 2.67 4.23 3.74.59.26 1.05.41 1.41.52.59.19 1.13.16 1.56.1.48-.07 1.47-.6 1.67-1.18.21-.58.21-1.07.15-1.18-.06-.1-.23-.16-.48-.28z"/></svg><span><small>WhatsApp</small>+33 6 00 00 00 00</span></a></li>
+                    <li><a href="mailto:contact@example.com"><svg class="icon" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg><span><small>Email</small>contact@example.com</span></a></li>
+                    <li><span class="contact-list__static"><svg class="icon" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 21s-7-6.2-7-11.5a7 7 0 0114 0C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg><span><small>Zone</small>France · Interventions à distance</span></span></li>
+                </ul>
+            </div>
+
+            <div class="quote__form">
+                                
+                <form name="quote_request" method="post" action="#devis" class="form" novalidate="novalidate" data-turbo="false">
+                    <div class="form__row">
+                        <div class="field"><label for="quote_request_name" class="required">Nom complet</label><input type="text" id="quote_request_name" name="quote_request[name]" required="required" placeholder="Ex. Marie Dupont" autocomplete="name" aria-invalid="false" /></div>
+
+                        <div class="field"><label for="quote_request_email" class="required">Adresse email</label><input type="email" id="quote_request_email" name="quote_request[email]" required="required" placeholder="vous@entreprise.com" autocomplete="email" aria-invalid="false" /></div>
+
+                    </div>
+                    <div class="form__row">
+                        <div class="field"><label for="quote_request_phone">Téléphone / WhatsApp<span class="field__optional"> (facultatif)</span></label><input type="tel" id="quote_request_phone" name="quote_request[phone]" placeholder="+33 6 00 00 00 00" autocomplete="tel" aria-invalid="false" /></div>
+
+                        <div class="field"><label for="quote_request_company">Entreprise<span class="field__optional"> (facultatif)</span></label><input type="text" id="quote_request_company" name="quote_request[company]" placeholder="Nom de votre entreprise" autocomplete="organization" aria-invalid="false" /></div>
+
+                    </div>
+                    <div class="form__row">
+                        <div class="field"><label for="quote_request_offer" class="required">Offre qui vous intéresse</label><select id="quote_request_offer" name="quote_request[offer]" required="required" data-offer-select="" aria-invalid="false"><option value="" selected="selected">Choisissez une offre</option><option value="starter">Abonnement Starter — 29 €/mois</option><option value="business">Abonnement Business — 49 €/mois</option><option value="business-pro">Abonnement Business Pro — 89 €/mois</option><option value="ecommerce">Abonnement E-commerce — 129 €/mois</option><option value="landing-page">Landing page — 390 € (paiement unique)</option><option value="site-vitrine">Site vitrine — 890 € (paiement unique)</option><option value="site-entreprise">Site entreprise — 1490 € (paiement unique)</option><option value="site-ecommerce">Site e-commerce — 2490 € (paiement unique)</option><option value="sur-mesure">Site sur mesure / application web — sur devis</option><option value="app-reservation">Application : Réservation en ligne</option><option value="app-facturation">Application : Devis &amp; facturation</option><option value="app-stock">Application : Gestion de stock &amp; ventes</option><option value="conseil">Je ne sais pas encore, conseillez-moi</option></select></div>
+
+                        <div class="field"><label for="quote_request_budget">Budget estimé<span class="field__optional"> (facultatif)</span></label><select id="quote_request_budget" name="quote_request[budget]" aria-invalid="false"><option value="">Sélectionnez (facultatif)</option><option value="lt500">Moins de 500</option><option value="500-1500">500 à 1 500</option><option value="1500-3000">1 500 à 3 000</option><option value="3000-10000">3 000 à 10 000</option><option value="gt10000">Plus de 10 000</option></select></div>
+
+                    </div>
+                    <div class="field"><label for="quote_request_message" class="required">Votre projet</label><textarea id="quote_request_message" name="quote_request[message]" required="required" rows="5" placeholder="Décrivez votre activité, vos objectifs et vos délais…" aria-invalid="false"></textarea></div>
+
+                        <div class="field field--check">
+        <label class="check"><input type="checkbox" id="quote_request_consent" name="quote_request[consent]" required="required" value="1" /><span>J’accepte d’être recontacté(e) au sujet de ma demande.</span>
+        </label></div>
+
+                    <div class="field hp-field" aria-hidden="true"><label for="quote_request_website">Ne pas remplir<span class="field__optional"> (facultatif)</span></label><input type="text" id="quote_request_website" name="quote_request[website]" tabindex="-1" autocomplete="off" aria-invalid="false" /></div>
+
+                    <button class="btn btn--primary btn--lg btn--block" type="submit">Envoyer ma demande <svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M21 3L3 10.5l7 3 3 7L21 3z"/><path d="M10 13.5L21 3"/></svg></button>
+                    <p class="form__note">Gratuit et sans engagement. Vos données ne sont utilisées que pour répondre à votre demande.</p>
+                </form>
+            </div>
+        </div>
+    </section>
+
+        <section class="final-cta">
+        <div class="container final-cta__inner">
+            <span class="final-cta__icon"><svg class="icon" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 15c-1.5 1.5-2 4.5-2 6 1.5 0 4.5-.5 6-2M9 15l-3-3c1-4 4.5-9 12-9 0 7.5-5 11-9 12z"/><circle cx="15" cy="9" r="1.5"/></svg></span>
+            <h2>Prêt à mettre votre entreprise en ligne ?</h2>
+            <p>Sites professionnels dès 29 €/mois. Lancement rapide, tarifs clairs, support dédié.</p>
+            <div class="hero__actions hero__actions--center">
+                <a class="btn btn--primary btn--lg" href="#devis">Obtenir mon site <svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+                <a class="btn btn--whatsapp btn--lg" href="https://wa.me/33600000000?text=Bonjour%20Joris%20Beat%2C%20je%20souhaite%20des%20informations%20sur%20vos%20services%20web." target="_blank" rel="noopener"><svg class="icon" width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38a9.9 9.9 0 004.74 1.21c5.46 0 9.91-4.45 9.91-9.91C21.95 6.45 17.5 2 12.04 2zm0 18.15c-1.48 0-2.93-.4-4.2-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.2 8.2 0 01-1.26-4.38c0-4.54 3.7-8.24 8.25-8.24 4.54 0 8.24 3.7 8.24 8.24 0 4.55-3.7 8.24-8.24 8.24zm4.52-6.17c-.25-.12-1.47-.72-1.69-.81-.23-.08-.39-.12-.56.13-.16.24-.64.8-.78.97-.14.16-.29.18-.54.06-.25-.12-1.05-.39-1.99-1.23-.74-.66-1.23-1.47-1.38-1.72-.14-.25-.02-.38.11-.5.11-.11.25-.29.37-.43.13-.15.17-.25.25-.42.08-.16.04-.31-.02-.43-.06-.12-.56-1.34-.76-1.84-.2-.48-.41-.42-.56-.43h-.48c-.17 0-.43.06-.66.31-.22.25-.86.85-.86 2.07 0 1.22.89 2.4 1.01 2.56.12.17 1.75 2.67 4.23 3.74.59.26 1.05.41 1.41.52.59.19 1.13.16 1.56.1.48-.07 1.47-.6 1.67-1.18.21-.58.21-1.07.15-1.18-.06-.1-.23-.16-.48-.28z"/></svg> Discuter sur WhatsApp</a>
+            </div>
+        </div>
+    </section>
+</main>
+
+<footer class="site-footer">
+    <div class="container site-footer__grid">
+        <div>
+            <a class="logo" href="#contenu">
+                <span class="logo__mark"><svg class="icon" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 8h18M9 12l-2 2 2 2M15 12l2 2-2 2M13 11l-2 6"/></svg></span>
+                <span class="logo__text"><strong>Joris Beat</strong><small>Développement Web &amp; Logiciel</small></span>
+            </a>
+            <p class="site-footer__about">Sites web, boutiques en ligne, applications et logiciels sur mesure pour les entreprises qui veulent grandir.</p>
+        </div>
+        <div>
+            <h3>Services</h3>
+            <ul>
+                <li><a href="#services">Sites vitrines</a></li>
+                <li><a href="#services">E-commerce</a></li>
+                <li><a href="#applications">Applications</a></li>
+                <li><a href="#services">Maintenance</a></li>
+            </ul>
+        </div>
+        <div>
+            <h3>Contact</h3>
+            <ul>
+                <li><a href="mailto:contact@example.com">contact@example.com</a></li>
+                <li><a href="https://wa.me/33600000000?text=Bonjour%20Joris%20Beat%2C%20je%20souhaite%20des%20informations%20sur%20vos%20services%20web." target="_blank" rel="noopener">+33 6 00 00 00 00</a></li>
+                <li>France · Interventions à distance</li>
+            </ul>
+        </div>
+    </div>
+    <div class="container site-footer__bottom">
+        <p>© 2026 Joris Beat. Tous droits réservés.</p>
+        <a href="#contenu">Retour en haut ↑</a>
+    </div>
+</footer>
+
+<a class="wa-float" href="https://wa.me/33600000000?text=Bonjour%20Joris%20Beat%2C%20je%20souhaite%20des%20informations%20sur%20vos%20services%20web." target="_blank" rel="noopener" aria-label="Me contacter sur WhatsApp"><svg class="icon" width="30" height="30" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38a9.9 9.9 0 004.74 1.21c5.46 0 9.91-4.45 9.91-9.91C21.95 6.45 17.5 2 12.04 2zm0 18.15c-1.48 0-2.93-.4-4.2-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.2 8.2 0 01-1.26-4.38c0-4.54 3.7-8.24 8.25-8.24 4.54 0 8.24 3.7 8.24 8.24 0 4.55-3.7 8.24-8.24 8.24zm4.52-6.17c-.25-.12-1.47-.72-1.69-.81-.23-.08-.39-.12-.56.13-.16.24-.64.8-.78.97-.14.16-.29.18-.54.06-.25-.12-1.05-.39-1.99-1.23-.74-.66-1.23-1.47-1.38-1.72-.14-.25-.02-.38.11-.5.11-.11.25-.29.37-.43.13-.15.17-.25.25-.42.08-.16.04-.31-.02-.43-.06-.12-.56-1.34-.76-1.84-.2-.48-.41-.42-.56-.43h-.48c-.17 0-.43.06-.66.31-.22.25-.86.85-.86 2.07 0 1.22.89 2.4 1.01 2.56.12.17 1.75 2.67 4.23 3.74.59.26 1.05.41 1.41.52.59.19 1.13.16 1.56.1.48-.07 1.47-.6 1.67-1.18.21-.58.21-1.07.15-1.18-.06-.1-.23-.16-.48-.28z"/></svg></a>
+
+<div class="mobile-bar">
+    <a class="btn btn--primary btn--block" href="#devis">Devis gratuit</a>
+    <a class="btn btn--whatsapp" href="https://wa.me/33600000000?text=Bonjour%20Joris%20Beat%2C%20je%20souhaite%20des%20informations%20sur%20vos%20services%20web." target="_blank" rel="noopener" aria-label="WhatsApp"><svg class="icon" width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38a9.9 9.9 0 004.74 1.21c5.46 0 9.91-4.45 9.91-9.91C21.95 6.45 17.5 2 12.04 2zm0 18.15c-1.48 0-2.93-.4-4.2-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.2 8.2 0 01-1.26-4.38c0-4.54 3.7-8.24 8.25-8.24 4.54 0 8.24 3.7 8.24 8.24 0 4.55-3.7 8.24-8.24 8.24zm4.52-6.17c-.25-.12-1.47-.72-1.69-.81-.23-.08-.39-.12-.56.13-.16.24-.64.8-.78.97-.14.16-.29.18-.54.06-.25-.12-1.05-.39-1.99-1.23-.74-.66-1.23-1.47-1.38-1.72-.14-.25-.02-.38.11-.5.11-.11.25-.29.37-.43.13-.15.17-.25.25-.42.08-.16.04-.31-.02-.43-.06-.12-.56-1.34-.76-1.84-.2-.48-.41-.42-.56-.43h-.48c-.17 0-.43.06-.66.31-.22.25-.86.85-.86 2.07 0 1.22.89 2.4 1.01 2.56.12.17 1.75 2.67 4.23 3.74.59.26 1.05.41 1.41.52.59.19 1.13.16 1.56.1.48-.07 1.47-.6 1.67-1.18.21-.58.21-1.07.15-1.18-.06-.1-.23-.16-.48-.28z"/></svg></a>
+</div>
+    
+
+<script>var WA_URL="https://wa.me/33600000000?text=";
+(function () {
+  // Menu mobile
+  var header = document.querySelector('[data-controller="nav"]');
+  var navBtn = header.querySelector('[data-nav-target="button"]');
+  function closeNav() { header.classList.remove('is-open'); navBtn.setAttribute('aria-expanded', 'false'); }
+  navBtn.addEventListener('click', function () {
+    var open = !header.classList.contains('is-open');
+    header.classList.toggle('is-open', open); navBtn.setAttribute('aria-expanded', String(open));
+  });
+  header.querySelectorAll('[data-action="nav#close"]').forEach(function (a) { a.addEventListener('click', closeNav); });
+
+  // Onglets tarifs
+  var tabs = Array.prototype.slice.call(document.querySelectorAll('[data-tabs-target="tab"]'));
+  var panels = document.querySelectorAll('[data-tabs-target="panel"]');
+  function show(i) {
+    tabs.forEach(function (t, j) {
+      var on = i === j; t.classList.toggle('is-active', on); t.setAttribute('aria-selected', String(on));
+      t.tabIndex = on ? 0 : -1; panels[j].hidden = !on;
+    });
+  }
+  tabs.forEach(function (t, i) {
+    t.addEventListener('click', function () { show(i); });
+    t.addEventListener('keydown', function (e) {
+      var n = { ArrowRight: i + 1, ArrowLeft: i - 1 }[e.key]; if (n === undefined) return;
+      n = (n + tabs.length) % tabs.length; show(n); tabs[n].focus(); e.preventDefault();
+    });
+  });
+
+  // Boutons « Choisir » -> présélection de l'offre
+  var select = document.querySelector('[data-offer-select]');
+  document.querySelectorAll('[data-controller="offer"]').forEach(function (a) {
+    a.addEventListener('click', function (e) {
+      e.preventDefault(); select.value = a.getAttribute('data-offer-slug-value');
+      document.getElementById('devis').scrollIntoView({ behavior: 'smooth' });
+    });
+  });
+
+  // Apparition au défilement
+  var els = document.querySelectorAll('.reveal');
+  if ('IntersectionObserver' in window) {
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (en) { if (en.isIntersecting) { en.target.classList.add('is-visible'); io.unobserve(en.target); } });
+    }, { threshold: 0.12 });
+    els.forEach(function (el) { io.observe(el); });
+  } else { els.forEach(function (el) { el.classList.add('is-visible'); }); }
+
+  // Formulaire (version de test sans serveur) : validation puis envoi via WhatsApp
+  var form = document.querySelector('form.form');
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+    form.querySelectorAll('.field__errors').forEach(function (n) { n.remove(); });
+    form.querySelectorAll('.field--error').forEach(function (n) { n.classList.remove('field--error'); });
+    var f = function (id) { return document.getElementById('quote_request_' + id); };
+    var rules = [
+      ['name', function (v) { return v.trim() !== ''; }, 'Merci d’indiquer votre nom.'],
+      ['email', function (v) { return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v); }, 'Merci d’indiquer un email valide.'],
+      ['offer', function (v) { return v !== ''; }, 'Merci de choisir une offre.'],
+      ['message', function (v) { return v.trim().length >= 10; }, 'Décrivez votre projet (10 caractères minimum).'],
+      ['consent', function (v, el) { return el.checked; }, 'Votre accord est nécessaire pour que je puisse vous répondre.']
+    ];
+    var ok = true;
+    rules.forEach(function (r) {
+      var el = f(r[0]);
+      if (!r[1](el.value, el)) {
+        ok = false; var row = el.closest('.field'); row.classList.add('field--error');
+        var ul = document.createElement('ul'); ul.className = 'field__errors'; ul.innerHTML = '<li>' + r[2] + '</li>'; row.appendChild(ul);
+      }
+    });
+    if (!ok) { form.querySelector('.field--error').scrollIntoView({ behavior: 'smooth', block: 'center' }); return; }
+    var offer = f('offer').options[f('offer').selectedIndex].text;
+    var txt = 'Bonjour, je souhaite un devis.\n\nNom : ' + f('name').value + '\nEmail : ' + f('email').value +
+      '\nTéléphone : ' + (f('phone').value || '—') + '\nEntreprise : ' + (f('company').value || '—') +
+      '\nOffre : ' + offer + '\n\nProjet : ' + f('message').value;
+    var msg = document.createElement('div'); msg.className = 'alert alert--success';
+    msg.textContent = 'Merci ' + f('name').value + ' ! WhatsApp va s’ouvrir avec votre demande pré-remplie.';
+    form.parentNode.insertBefore(msg, form);
+    window.open(WA_URL + encodeURIComponent(txt), '_blank');
+  });
+})();
+</script>
+</body>
+</html>
